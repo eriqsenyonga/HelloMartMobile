@@ -6,8 +6,8 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1501386367102"
-    token="1113076546776352807"
+    timestamp="1501387942064"
+    token="-3153360579014806583"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
@@ -26,146 +26,14 @@
     <artifact
         location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\outputs\apk\app-debug.apk"
         type="SPLIT_MAIN" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1501386367102"
+        timestamp="1501387942064"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\outputs\apk\app-debug.apk"
             type="SPLIT_MAIN" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\Android Studio Projects\RolexMaster\HelloMartMobile\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
     </build>
 
 </instant-run>

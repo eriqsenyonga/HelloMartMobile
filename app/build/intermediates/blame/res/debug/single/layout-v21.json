@@ -1,34 +1,18 @@
 [
     {
-        "merged": "E:\\Android Studio Projects\\RolexMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\5a0df2291a469d3406ba92ecf3523debbce3250c\\output\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
-        "merged": "E:\\Android Studio Projects\\RolexMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\5a0df2291a469d3406ba92ecf3523debbce3250c\\output\\res\\layout-v21\\notification_template_icon_group.xml"
-    },
-    {
-        "merged": "E:\\Android Studio Projects\\RolexMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\5a0df2291a469d3406ba92ecf3523debbce3250c\\output\\res\\layout-v21\\notification_action.xml"
-    },
-    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\5a0df2291a469d3406ba92ecf3523debbce3250c\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+        "source": "C:\\Users\\Eric\\.android\\build-cache\\b245d7b938662c61ccf81100e4d80437db8d9de9\\output\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\5a0df2291a469d3406ba92ecf3523debbce3250c\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+        "source": "C:\\Users\\Eric\\.android\\build-cache\\b245d7b938662c61ccf81100e4d80437db8d9de9\\output\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\5a0df2291a469d3406ba92ecf3523debbce3250c\\output\\res\\layout-v21\\notification_action.xml"
-    },
-    {
-        "merged": "E:\\Android Studio Projects\\RolexMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\5a0df2291a469d3406ba92ecf3523debbce3250c\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+        "source": "C:\\Users\\Eric\\.android\\build-cache\\b245d7b938662c61ccf81100e4d80437db8d9de9\\output\\res\\layout-v21\\notification_action.xml"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\5a0df2291a469d3406ba92ecf3523debbce3250c\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+        "source": "C:\\Users\\Eric\\.android\\build-cache\\b245d7b938662c61ccf81100e4d80437db8d9de9\\output\\res\\layout-v21\\notification_template_icon_group.xml"
     }
 ]

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "E:\\Android Studio Projects\\RolexMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\xml\\searchable.xml",
-        "source": "E:\\Android Studio Projects\\RolexMaster\\HelloMartMobile\\app\\src\\main\\res\\xml\\searchable.xml"
-    },
-    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\xml\\searchable.xml",
         "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\xml\\searchable.xml"
     }

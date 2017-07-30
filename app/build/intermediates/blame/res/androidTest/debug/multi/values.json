@@ -1,29 +1,5 @@
 [
     {
-        "outputFile": "E:\\Android Studio Projects\\RolexMaster\\HelloMartMobile\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "C:\\Users\\Eric\\.android\\build-cache\\550c79b5bf55390dc1e64dac146ca2d87120bfad\\output\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
@@ -35,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "C:\\Users\\Eric\\.android\\build-cache\\550c79b5bf55390dc1e64dac146ca2d87120bfad\\output\\res\\values\\values.xml",
+                    "file": "C:\\Users\\Eric\\.android\\build-cache\\bf37731fb2c97b259933816e14d46b762000b871\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
