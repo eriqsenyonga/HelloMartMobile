@@ -1,0 +1,144 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:2:1-45:12
+	package
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:3:5-50
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:5:22-64
+application
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:7:5-43:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Eric\.android\build-cache\35ff94eecb6f32488034375abe31360f778375bc\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:25.3.0] C:\Users\Eric\.android\build-cache\505f2279d0853c10e4703a07178e838f8478bec6\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Eric\.android\build-cache\5a0df2291a469d3406ba92ecf3523debbce3250c\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Eric\.android\build-cache\de3a2b1c03814c1c595b59ba8a06e9f593226947\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Eric\.android\build-cache\b16d8ff13053181504788dd58a9df594e1db3893\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.0] C:\Users\Eric\.android\build-cache\e7ce07ee74a55b444cc9dfbc9d0bf92950eb2430\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Eric\.android\build-cache\72a056a9daf79c588ee70b05930f2324fc25e748\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Eric\.android\build-cache\23eaadd912706cec1f78caf5830f3ffefa0e5b75\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Eric\.android\build-cache\2c8b0344fda2c80e0afe696b07e8184384cbbb19\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Eric\.android\build-cache\64190e363722bebadcbf6cfa09b134f39f4c7f8c\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:cardview-v7:25.3.0] C:\Users\Eric\.android\build-cache\4a26cc39cb0f6f56a0bf4503b87cc8ed56a06d48\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Eric\.android\build-cache\59966306977f0ab16ef9a7d2e898a0690f2dd713\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Eric\.android\build-cache\cf4eb282623d7a46275cfe6838ecc637e0de5cd4\output\AndroidManifest.xml:29:5-20
+MERGED from [de.hdodenhof:circleimageview:2.0.0] C:\Users\Eric\.android\build-cache\75fbcf9d60142dc2c5eda7941feaed4626ea583c\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Eric\.android\build-cache\7fcf8c72f5ca72ddfcc85068534aed80d0ed0be4\output\AndroidManifest.xml:9:5-20
+	android:label
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:11:9-41
+	android:supportsRtl
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:13:9-35
+	android:roundIcon
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:12:9-54
+	android:allowBackup
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:9:9-35
+	android:icon
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:10:9-43
+	android:theme
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:14:9-40
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:8:9-43
+activity#com.plexosysconsult.hellomartmobile.SplashActivity
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:15:9-21:20
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:15:19-49
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:19:27-74
+activity#com.plexosysconsult.hellomartmobile.LoginActivity
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:22:9-51
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:22:19-48
+activity#com.plexosysconsult.hellomartmobile.MainActivity
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:23:9-32:20
+	android:label
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:25:13-56
+	android:theme
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:26:13-44
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:24:13-41
+meta-data#android.app.default_searchable
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:27:13-29:55
+	android:value
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:29:17-52
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:28:17-62
+activity#com.plexosysconsult.hellomartmobile.SearchableActivity
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:33:9-42:20
+	android:launchMode
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:34:13-43
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:33:19-53
+intent-filter#android.intent.action.SEARCH
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:35:13-37:29
+action#android.intent.action.SEARCH
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:36:17-71
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:36:25-68
+meta-data#android.app.searchable
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:38:13-40:54
+	android:resource
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:40:17-51
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:39:17-54
+uses-sdk
+INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Eric\.android\build-cache\35ff94eecb6f32488034375abe31360f778375bc\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:25.3.0] C:\Users\Eric\.android\build-cache\505f2279d0853c10e4703a07178e838f8478bec6\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Eric\.android\build-cache\5a0df2291a469d3406ba92ecf3523debbce3250c\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Eric\.android\build-cache\de3a2b1c03814c1c595b59ba8a06e9f593226947\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Eric\.android\build-cache\b16d8ff13053181504788dd58a9df594e1db3893\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.0] C:\Users\Eric\.android\build-cache\e7ce07ee74a55b444cc9dfbc9d0bf92950eb2430\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Eric\.android\build-cache\72a056a9daf79c588ee70b05930f2324fc25e748\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Eric\.android\build-cache\23eaadd912706cec1f78caf5830f3ffefa0e5b75\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Eric\.android\build-cache\2c8b0344fda2c80e0afe696b07e8184384cbbb19\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Eric\.android\build-cache\64190e363722bebadcbf6cfa09b134f39f4c7f8c\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:cardview-v7:25.3.0] C:\Users\Eric\.android\build-cache\4a26cc39cb0f6f56a0bf4503b87cc8ed56a06d48\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\Eric\.android\build-cache\814c0b92125d3b42a31b91777e9f86f8660a0863\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Eric\.android\build-cache\59966306977f0ab16ef9a7d2e898a0690f2dd713\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Eric\.android\build-cache\cf4eb282623d7a46275cfe6838ecc637e0de5cd4\output\AndroidManifest.xml:21:5-23:58
+MERGED from [de.hdodenhof:circleimageview:2.0.0] C:\Users\Eric\.android\build-cache\75fbcf9d60142dc2c5eda7941feaed4626ea583c\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Eric\.android\build-cache\7fcf8c72f5ca72ddfcc85068534aed80d0ed0be4\output\AndroidManifest.xml:7:5-43
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.3.0] C:\Users\Eric\.android\build-cache\505f2279d0853c10e4703a07178e838f8478bec6\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.0] C:\Users\Eric\.android\build-cache\505f2279d0853c10e4703a07178e838f8478bec6\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Eric\.android\build-cache\5a0df2291a469d3406ba92ecf3523debbce3250c\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Eric\.android\build-cache\de3a2b1c03814c1c595b59ba8a06e9f593226947\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Eric\.android\build-cache\b16d8ff13053181504788dd58a9df594e1db3893\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.0] C:\Users\Eric\.android\build-cache\e7ce07ee74a55b444cc9dfbc9d0bf92950eb2430\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Eric\.android\build-cache\72a056a9daf79c588ee70b05930f2324fc25e748\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Eric\.android\build-cache\23eaadd912706cec1f78caf5830f3ffefa0e5b75\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Eric\.android\build-cache\2c8b0344fda2c80e0afe696b07e8184384cbbb19\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Eric\.android\build-cache\64190e363722bebadcbf6cfa09b134f39f4c7f8c\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:cardview-v7:25.3.0] C:\Users\Eric\.android\build-cache\4a26cc39cb0f6f56a0bf4503b87cc8ed56a06d48\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\Eric\.android\build-cache\814c0b92125d3b42a31b91777e9f86f8660a0863\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Eric\.android\build-cache\59966306977f0ab16ef9a7d2e898a0690f2dd713\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Eric\.android\build-cache\cf4eb282623d7a46275cfe6838ecc637e0de5cd4\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:design:25.3.0] C:\Users\Eric\.android\build-cache\505f2279d0853c10e4703a07178e838f8478bec6\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.0] C:\Users\Eric\.android\build-cache\505f2279d0853c10e4703a07178e838f8478bec6\output\AndroidManifest.xml:26:9-47

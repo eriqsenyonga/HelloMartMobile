@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\64190e363722bebadcbf6cfa09b134f39f4c7f8c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_cede223d789b4476a31d18e4aa096604c8038389.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\cf4eb282623d7a46275cfe6838ecc637e0de5cd4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_2a3f654ae38c2351902cb71c4840b597b5e5ad92.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\de3a2b1c03814c1c595b59ba8a06e9f593226947\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_26588896c26a4004e098276f916df38d5dbf87f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android\extras\android\m2repository\com\android\support\support-annotations\25.3.0\support-annotations-25.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.0_28b4af3c675ebdba4e959331a6cc43f544b67271.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\59966306977f0ab16ef9a7d2e898a0690f2dd713\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_338283b0613f5fcd5db8b9418b2dc557f90f6df7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\2c8b0344fda2c80e0afe696b07e8184384cbbb19\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_fea0ba804350dad2ba9a1f58543da3817fa1e269.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4636226fb797487936b832d8ce762898eb352fbc">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_43c9e4f0b4e6663235648d4d2e6c34784936c790\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\23eaadd912706cec1f78caf5830f3ffefa0e5b75\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_94fda2553dcb8e45ac300c67f8a5667674134310.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\505f2279d0853c10e4703a07178e838f8478bec6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_cfaa576d90b08c4b6b0ef012ccce5ac046c58770.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\814c0b92125d3b42a31b91777e9f86f8660a0863\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_af36ccbfdc608b4856042f0d734d343c46f3688d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\72a056a9daf79c588ee70b05930f2324fc25e748\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_acac0e914b10acd97b591bf15b0d41c18c613089.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\35ff94eecb6f32488034375abe31360f778375bc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_3be06ff16663ba4778c72dd022f2da358e994452.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_92b05fcd6acb77c63526355481ca117edfd3ee55\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\e7ce07ee74a55b444cc9dfbc9d0bf92950eb2430\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_47cdddaa71616a7470852dda50cf9cef6b07b3e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\b16d8ff13053181504788dd58a9df594e1db3893\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_2e3fdd55e7db4a83385f5b23ea9fbe1a94098c3e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\5a0df2291a469d3406ba92ecf3523debbce3250c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_a7d70ac944c5219755ec873033adce241c8ad07e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\4a26cc39cb0f6f56a0bf4503b87cc8ed56a06d48\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5d103b270b3f3b50d8e6b44aa8e068b0de33426">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_d24ce553d861bd775fcbec41f28fc13c8f79e2f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\android\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_59a5e328a29b4d5099346da7e45af6dd992892cd.jar" />
+    </item>
+
+</items>
