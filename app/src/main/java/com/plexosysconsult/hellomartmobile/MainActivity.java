@@ -2,6 +2,7 @@ package com.plexosysconsult.hellomartmobile;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity
     FragmentManager fm;
     DrawerLayout drawer;
     NavigationView navigationView;
+    SharedPreferences mPositionSavedPrefs;
+    SharedPreferences.Editor posSavedEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,11 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+
+        mPositionSavedPrefs = getSharedPreferences("mPositionSaved",
+                Context.MODE_PRIVATE);
+        posSavedEditor = mPositionSavedPrefs.edit();
+
         fm = getSupportFragmentManager();
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -52,6 +60,61 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        if (getIntent().hasExtra("beginning")) {
+
+            fm.beginTransaction().replace(R.id.contentMain, new ShopFragment()).commit();
+            drawer.openDrawer(GravityCompat.START);
+            posSavedEditor.putInt("last_main_position", R.id.nav_shop).apply();
+            getSupportActionBar().setTitle("Shop");
+            setNavigationViewCheckedItem(R.id.nav_shop);
+
+        } else {
+
+            Fragment fragment = null;
+            CharSequence title = null;
+
+            int id = mPositionSavedPrefs.getInt(
+                    "last_main_position", 1);
+
+
+            if (id == R.id.nav_shop) {
+                fragment = new ShopFragment();
+                title = "Shop";
+            }
+
+            if (id == R.id.nav_my_account) {
+                // fragment = new MyAccountFragment();
+                // title = "My Account";
+
+            }
+
+            if (id == R.id.nav_orders) {
+                //   fragment = new OrdersFragment();
+                //  title = "Orders";
+            }
+
+            if (id == R.id.nav_cart) {
+                fragment = new CartFragment();
+                title = "Cart";
+            }
+
+            if (id == R.id.nav_categories) {
+
+
+                fragment = new CategoriesFragment();
+                title = "Categories";
+            }
+
+            if (fragment != null) {
+
+                fm.beginTransaction().replace(R.id.contentMain, fragment).commit();
+                getSupportActionBar().setTitle(title);
+                setNavigationViewCheckedItem(id);
+                drawer.closeDrawer(GravityCompat.START);
+
+            }
+        }
     }
 
     @Override
@@ -90,7 +153,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_cart) {
+
+            openCart();
             return true;
         }
 
@@ -113,7 +178,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_my_account) {
 
-        }else if (id == R.id.nav_cart) {
+        } else if (id == R.id.nav_cart) {
 
             fragment = new CartFragment();
 
@@ -130,7 +195,7 @@ public class MainActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.contentMain, fragment).commit();
 
             removeSubtitle(item.getTitle().toString());
-
+            posSavedEditor.putInt("last_main_position", id).apply();
             drawer.closeDrawer(GravityCompat.START);
 
         }
@@ -144,6 +209,15 @@ public class MainActivity extends AppCompatActivity
 
         fm.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.contentMain, new SubCategoriesFragment()).addToBackStack(null).commit();
         getSupportActionBar().setSubtitle(subTitle);
+
+
+    }
+
+    public void openCart() {
+
+        fm.beginTransaction().replace(R.id.contentMain, new CartFragment()).addToBackStack(null).commit();
+        setActionBarTitleAndSubtitle("Cart", "");
+        setNavigationViewCheckedItem(R.id.nav_cart);
 
 
     }
@@ -177,6 +251,7 @@ public class MainActivity extends AppCompatActivity
 
 
         navigationView.setCheckedItem(itemId);
+        posSavedEditor.putInt("last_main_position", itemId).apply();
 
     }
 

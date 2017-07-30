@@ -466,4 +466,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
 
         }
     }
+
+
+
 }

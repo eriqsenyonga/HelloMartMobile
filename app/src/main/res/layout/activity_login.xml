@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Hello Mart"
+                android:text="Hello Mart Ug"
                 android:textSize="50sp"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"

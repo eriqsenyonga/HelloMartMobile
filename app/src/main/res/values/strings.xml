@@ -16,4 +16,5 @@
     <string name="orders">Orders</string>
     <string name="search_items">Search items</string>
     <string name="search_hint">Search items</string>
+    <string name="cart">Cart</string>
 </resources>

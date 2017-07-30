@@ -4,15 +4,16 @@
 
     <item
         android:id="@+id/action_search"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/ic_action_search"
         android:title="@string/search_items"
         app:actionViewClass="android.support.v7.widget.SearchView"
-        app:showAsAction="collapseActionView|ifRoom" />
+        app:showAsAction="collapseActionView|always" />
 
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_cart"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_action_shopping_cart"
+        android:title="@string/cart"
+        app:showAsAction="always" />
 </menu>
