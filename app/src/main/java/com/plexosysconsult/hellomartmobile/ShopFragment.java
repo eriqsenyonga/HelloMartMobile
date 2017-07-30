@@ -6,13 +6,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -51,7 +48,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
     String URL_GET_ITEMS = "http://hellomartug.com/example/getAllProducts.php";
     String URL_GET_ITEMS_IN_CATEGORY = "http://hellomartug.com/example/getProductsInCategory.php";
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
-    List<Item> itemsToShow;
+    // List<Item> itemsToShow;
     SwipeRefreshLayout swipeRefreshLayout;
     UsefulFunctions usefulFunctions;
     ProgressBar pbLoading;
@@ -62,7 +59,21 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
     int KEY_WHICH_GET;
     int ALL_ITEMS = 1;
     int CATEGORY_ITEMS = 2;
+    GridLayoutManager gridLayoutManager;
+    RecyclerViewAdapterVegetable adapter;
     //  String jsonFileName = "fruits.json";
+
+
+    // Index from which pagination should start (1 is 1st page in our case)
+    private static final int PAGE_START = 1;
+    // Indicates if footer ProgressBar is shown (i.e. next page is loading)
+    private boolean isLoading = false;
+    // If current page is the last page (Pagination will stop after this page load)
+    private boolean isLastPage = false;
+    // total no. of pages to load. Initial load is page 0, after which 2 more pages will load.
+    private int TOTAL_PAGES = 1;
+    // indicates the current page which Pagination is fetching.
+    private int currentPage = PAGE_START;
 
 
     public ShopFragment() {
@@ -103,11 +114,52 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
         usefulFunctions = new UsefulFunctions(getActivity());
 
         recyclerView.hasFixedSize();
-        //  recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-        recyclerView.setItemAnimator(new SlideInUpAnimator(new OvershootInterpolator(1f)));
 
-        itemsToShow = new ArrayList();
+        adapter = new RecyclerViewAdapterVegetable(getActivity());
+
+        gridLayoutManager = new GridLayoutManager(getActivity(), 3);
+        //  recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(gridLayoutManager);
+        SlideInUpAnimator slideInUpAnimator = new SlideInUpAnimator();
+       // slideInUpAnimator.setAddDuration(500);
+
+        recyclerView.setItemAnimator(slideInUpAnimator);
+
+        recyclerView.setAdapter(adapter);
+
+        //itemsToShow = new ArrayList();
+
+        recyclerView.addOnScrollListener(new PaginationScrollListener(gridLayoutManager) {
+            @Override
+            protected void loadMoreItems() {
+                isLoading = true;
+                currentPage += 1; //Increment page index to load the next one
+
+                if (KEY_WHICH_GET == ALL_ITEMS) {
+                    fetchItemsJson();
+                } else if (KEY_WHICH_GET == CATEGORY_ITEMS) {
+                    fetchItemsInCategoryJson();
+                }
+
+
+                //   loadNextPage();
+            }
+
+            @Override
+            public int getTotalPageCount() {
+                return TOTAL_PAGES;
+            }
+
+            @Override
+            public boolean isLastPage() {
+                return isLastPage;
+            }
+
+            @Override
+            public boolean isLoading() {
+                return isLoading;
+            }
+        });
 
 
         Bundle bundle = getArguments();
@@ -144,7 +196,18 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
                             // JSONObject jsonResponse = new JSONObject(usefulFunctions.mReadJsonData(jsonFileName));
 
                             JSONObject jsonResponse = new JSONObject(response);
-                            putJsonIntoList(jsonResponse);
+
+                            if (currentPage > PAGE_START) {
+                                //If we are fetching the more pages
+
+                                loadSubsequentPages(putJsonIntoList(jsonResponse));
+
+                            } else {
+                                //if this is the first page
+                                loadPageOne(putJsonIntoList(jsonResponse));
+
+
+                            }
                             pbLoading.setVisibility(View.GONE);
 
                         } catch (JSONException e) {
@@ -179,7 +242,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
-                map.put("page", "1");
+                map.put("page", "" + currentPage);
 
                 return map;
             }
@@ -221,7 +284,17 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
                             // JSONObject jsonResponse = new JSONObject(usefulFunctions.mReadJsonData(jsonFileName));
 
                             JSONObject jsonResponse = new JSONObject(response);
-                            putJsonIntoList(jsonResponse);
+                            if (currentPage > PAGE_START) {
+                                //If we are fetching the more pages
+
+                                loadSubsequentPages(putJsonIntoList(jsonResponse));
+
+                            } else {
+                                //if this is the first page
+                                loadPageOne(putJsonIntoList(jsonResponse));
+
+
+                            }
                             pbLoading.setVisibility(View.GONE);
 
                         } catch (JSONException e) {
@@ -257,6 +330,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
                 map.put("cat", categorySlug);
+                map.put("page", "" + currentPage);
 
                 return map;
             }
@@ -285,10 +359,13 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
     }
 
 
-    private void putJsonIntoList(JSONObject jsonResponse) {
+    private List<Item> putJsonIntoList(JSONObject jsonResponse) {
 
+        List<Item> itemsToShow = new ArrayList<>();
 
         try {
+
+            TOTAL_PAGES = Integer.parseInt(jsonResponse.getString("num_pages").trim());
 
             JSONArray fruits = jsonResponse.getJSONArray("products");
 
@@ -345,9 +422,35 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
         }
 
 
-        recyclerView.setAdapter(new RecyclerViewAdapterVegetable(getActivity(), itemsToShow));
+        return itemsToShow;
 
 
+        //   recyclerView.setAdapter(new RecyclerViewAdapterVegetable(getActivity(), itemsToShow));
+
+
+    }
+
+
+    private void loadPageOne(List<Item> itemsToShow) {
+
+        adapter.addAll(itemsToShow);
+
+        if (currentPage < TOTAL_PAGES) adapter.addLoadingFooter();
+        else isLastPage = true;
+
+
+    }
+
+    private void loadSubsequentPages(List<Item> itemsToShow) {
+        // List<Movie> movies = Movie.createMovies(adapter.getItemCount());  // 1
+
+        adapter.removeLoadingFooter();  // 2
+        isLoading = false;   // 3
+
+        adapter.addAll(itemsToShow);   // 4
+
+        if (currentPage != TOTAL_PAGES) adapter.addLoadingFooter();  // 5
+        else isLastPage = true;
     }
 
     @Override

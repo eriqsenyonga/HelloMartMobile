@@ -35,6 +35,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
+
 public class SearchableActivity extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView recyclerView;
@@ -42,7 +44,7 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
     String URL_GET_ITEMS = "http://hellomartug.com/example/search.php";
 
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
-    List<Item> itemsToShow;
+    //  List<Item> itemsToShow;
     SwipeRefreshLayout swipeRefreshLayout;
     UsefulFunctions usefulFunctions;
     ProgressBar pbLoading;
@@ -52,6 +54,21 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
 
     String queryString;
     Toolbar toolbar;
+
+    GridLayoutManager gridLayoutManager;
+    RecyclerViewAdapterVegetable adapter;
+
+
+    // Index from which pagination should start (1 is 1st page in our case)
+    private static final int PAGE_START = 1;
+    // Indicates if footer ProgressBar is shown (i.e. next page is loading)
+    private boolean isLoading = false;
+    // If current page is the last page (Pagination will stop after this page load)
+    private boolean isLastPage = false;
+    // total no. of pages to load. Initial load is page 0, after which 2 more pages will load.
+    private int TOTAL_PAGES = 1;
+    // indicates the current page which Pagination is fetching.
+    private int currentPage = PAGE_START;
 
 
     @Override
@@ -73,10 +90,47 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
         usefulFunctions = new UsefulFunctions(this);
 
         recyclerView.hasFixedSize();
-        //  recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        adapter = new RecyclerViewAdapterVegetable(this);
 
-        itemsToShow = new ArrayList();
+        gridLayoutManager = new GridLayoutManager(this, 3);
+        //  recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(gridLayoutManager);
+
+        SlideInUpAnimator slideInUpAnimator = new SlideInUpAnimator();
+      //  slideInUpAnimator.setAddDuration(500);
+
+        recyclerView.setItemAnimator(slideInUpAnimator);
+
+        recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnScrollListener(new PaginationScrollListener(gridLayoutManager) {
+            @Override
+            protected void loadMoreItems() {
+                isLoading = true;
+                currentPage += 1; //Increment page index to load the next one
+
+
+                fetchItemsJson();
+
+
+                //   loadNextPage();
+            }
+
+            @Override
+            public int getTotalPageCount() {
+                return TOTAL_PAGES;
+            }
+
+            @Override
+            public boolean isLastPage() {
+                return isLastPage;
+            }
+
+            @Override
+            public boolean isLoading() {
+                return isLoading;
+            }
+        });
 
         bReload.setOnClickListener(this);
 
@@ -88,11 +142,10 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
     public boolean onOptionsItemSelected(MenuItem item) {
 
 
-        if(item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
 
             onBackPressed();
             return true;
-
 
 
         }
@@ -137,7 +190,17 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
                             // JSONObject jsonResponse = new JSONObject(usefulFunctions.mReadJsonData(jsonFileName));
 
                             JSONObject jsonResponse = new JSONObject(response);
-                            putJsonIntoList(jsonResponse);
+                            if (currentPage > PAGE_START) {
+                                //If we are fetching the more pages
+
+                                loadSubsequentPages(putJsonIntoList(jsonResponse));
+
+                            } else {
+                                //if this is the first page
+                                loadPageOne(putJsonIntoList(jsonResponse));
+
+
+                            }
                             pbLoading.setVisibility(View.GONE);
 
                         } catch (JSONException e) {
@@ -173,6 +236,7 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
                 map.put("q", queryString);
+                map.put("page", "" + currentPage);
 
                 return map;
             }
@@ -200,10 +264,13 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-    private void putJsonIntoList(JSONObject jsonResponse) {
+    private List<Item> putJsonIntoList(JSONObject jsonResponse) {
 
+        List<Item> itemsToShow = new ArrayList<>();
 
         try {
+
+            TOTAL_PAGES = Integer.parseInt(jsonResponse.getString("num_pages").trim());
 
             JSONArray fruits = jsonResponse.getJSONArray("products");
 
@@ -259,10 +326,32 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
 
         }
 
+        return itemsToShow;
+        // recyclerView.setAdapter(new RecyclerViewAdapterVegetable(this, itemsToShow));
 
-        recyclerView.setAdapter(new RecyclerViewAdapterVegetable(this, itemsToShow));
+
+    }
+
+    private void loadPageOne(List<Item> itemsToShow) {
+
+        adapter.addAll(itemsToShow);
+
+        if (currentPage < TOTAL_PAGES) adapter.addLoadingFooter();
+        else isLastPage = true;
 
 
+    }
+
+    private void loadSubsequentPages(List<Item> itemsToShow) {
+        // List<Movie> movies = Movie.createMovies(adapter.getItemCount());  // 1
+
+        adapter.removeLoadingFooter();  // 2
+        isLoading = false;   // 3
+
+        adapter.addAll(itemsToShow);   // 4
+
+        if (currentPage != TOTAL_PAGES) adapter.addLoadingFooter();  // 5
+        else isLastPage = true;
     }
 
     @Override

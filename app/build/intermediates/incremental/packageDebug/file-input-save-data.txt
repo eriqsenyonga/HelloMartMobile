@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Jul 30 22:48:29 EAT 2017
+#Mon Jul 31 01:30:48 EAT 2017
 210.set=ANDROID_RESOURCE
 282.file=E\:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\design_layout_snackbar_include.xml
 14.set=ANDROID_RESOURCE
