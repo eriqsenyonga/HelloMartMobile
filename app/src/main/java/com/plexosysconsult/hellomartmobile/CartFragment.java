@@ -1,6 +1,7 @@
 package com.plexosysconsult.hellomartmobile;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -61,6 +62,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         linearLayoutManager = new LinearLayoutManager(getActivity());
 
         rvCart.setLayoutManager(linearLayoutManager);
+        rvCart.addItemDecoration(new ListDividerDecoration(getActivity()));
 
         adapter = new RecyclerViewAdapterCart(getActivity());
 
@@ -82,9 +84,13 @@ public class CartFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(v == bCheckOut){
+        if (v == bCheckOut) {
 
-            Toast.makeText(getActivity(),"Go to checkout", Toast.LENGTH_LONG).show();
+            //   Toast.makeText(getActivity(),"Go to checkout", Toast.LENGTH_LONG).show();
+
+
+            Intent i = new Intent(getActivity(), BillingDetails.class);
+            startActivity(i);
 
         }
     }

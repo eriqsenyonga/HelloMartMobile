@@ -30,7 +30,7 @@ TextView tvLogo;
             public void run() {
                 // Do something after 5s = 5000ms
 
-                Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                Intent i = new Intent(SplashActivity.this, MainActivity.class);
                 i.putExtra("beginning", 1);
                 startActivity(i);
 

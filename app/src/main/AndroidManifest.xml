@@ -23,23 +23,32 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.app.default_searchable"
                 android:value=".SearchableActivity" />
-
-
         </activity>
-        <activity android:name=".SearchableActivity"
+        <activity
+            android:name=".BillingDetails"
+            android:label="@string/title_activity_billing_details"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.plexosysconsult.hellomartmobile.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SearchableActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
-
         </activity>
+        <activity android:name=".OrderSuccessActivity"></activity>
     </application>
 
 </manifest>

@@ -259,6 +259,7 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
 
                                                                 cartItem.setItemName(items.get(position).getItemName());
                                                                 cartItem.setItemId(items.get(position).getItemId());
+                                                                cartItem.setItemImageUrl(items.get(position).getImageUrl());
 
                                                                 cartItem.setQuantity(tilQuantity.getEditText().getText().toString());
                                                                 cartItem.setItemUnitPrice(items.get(position).getItemPrice());
