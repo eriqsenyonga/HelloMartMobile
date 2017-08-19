@@ -21,18 +21,18 @@ application
 ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:7:5-52:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Eric\.android\build-cache\35ff94eecb6f32488034375abe31360f778375bc\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.0.0] C:\Users\Eric\.android\build-cache\7d95d034197dab837cbeefe727f798c213170457\output\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Eric\.android\build-cache\f878ee2f6dbe93da0ded2599b219514ead986ff2\output\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\0b2df8882dfc75414aebdb1a73a066839f893f55\output\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\1a3cd4ccf641dfed50e3b68e5288f71aca1b9cf0\output\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:transition:26.0.0] C:\Users\Eric\.android\build-cache\ace9f8556a14618cf9695d7d57a6f1ea4ee4d66c\output\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Eric\.android\build-cache\5c5915b95226830a056166bf324158dcc48a2325\output\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Eric\.android\build-cache\28e6f4c762af07bc3a721064b88bedac85082dd5\output\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Eric\.android\build-cache\cda9c0dfb4f897bd2f6adec2c7b1d1b599097d57\output\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Eric\.android\build-cache\5a745a0f6e843d9c42e3b8f85fe792132a27864d\output\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:cardview-v7:26.0.0] C:\Users\Eric\.android\build-cache\34fb0c46b147fd20f563a294a5378d5b0a5274eb\output\AndroidManifest.xml:22:5-26:19
 MERGED from [de.hdodenhof:circleimageview:2.0.0] C:\Users\Eric\.android\build-cache\75fbcf9d60142dc2c5eda7941feaed4626ea583c\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.0.0] C:\Users\Eric\.android\build-cache\7fcf8c72f5ca72ddfcc85068534aed80d0ed0be4\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:recyclerview-v7:26.0.0] C:\Users\Eric\.android\build-cache\333e07e4ccc03758394fd3ab56029025e8f13c5e\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Eric\.android\build-cache\f878ee2f6dbe93da0ded2599b219514ead986ff2\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Eric\.android\build-cache\5c5915b95226830a056166bf324158dcc48a2325\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Eric\.android\build-cache\28e6f4c762af07bc3a721064b88bedac85082dd5\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Eric\.android\build-cache\cda9c0dfb4f897bd2f6adec2c7b1d1b599097d57\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Eric\.android\build-cache\5a745a0f6e843d9c42e3b8f85fe792132a27864d\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\0b2df8882dfc75414aebdb1a73a066839f893f55\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\1a3cd4ccf641dfed50e3b68e5288f71aca1b9cf0\output\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Eric\.android\build-cache\d0fe6dbee219111ee3a9fd46918a288aba230dec\output\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Eric\.android\build-cache\b245d7b938662c61ccf81100e4d80437db8d9de9\output\AndroidManifest.xml:25:5-29:19
 	android:label
@@ -124,19 +124,20 @@ INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\a
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Eric\.android\build-cache\35ff94eecb6f32488034375abe31360f778375bc\output\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:design:26.0.0] C:\Users\Eric\.android\build-cache\7d95d034197dab837cbeefe727f798c213170457\output\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:multidex:1.0.1] C:\Users\Eric\.android\build-cache\c5d60f1ea8ecb5641ce812855decda00be178a69\output\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Eric\.android\build-cache\f878ee2f6dbe93da0ded2599b219514ead986ff2\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\0b2df8882dfc75414aebdb1a73a066839f893f55\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\1a3cd4ccf641dfed50e3b68e5288f71aca1b9cf0\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:26.0.0] C:\Users\Eric\.android\build-cache\ace9f8556a14618cf9695d7d57a6f1ea4ee4d66c\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Eric\.android\build-cache\5c5915b95226830a056166bf324158dcc48a2325\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Eric\.android\build-cache\28e6f4c762af07bc3a721064b88bedac85082dd5\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Eric\.android\build-cache\cda9c0dfb4f897bd2f6adec2c7b1d1b599097d57\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Eric\.android\build-cache\5a745a0f6e843d9c42e3b8f85fe792132a27864d\output\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:cardview-v7:26.0.0] C:\Users\Eric\.android\build-cache\34fb0c46b147fd20f563a294a5378d5b0a5274eb\output\AndroidManifest.xml:20:5-44
 MERGED from [de.hdodenhof:circleimageview:2.0.0] C:\Users\Eric\.android\build-cache\75fbcf9d60142dc2c5eda7941feaed4626ea583c\output\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.volley:volley:1.0.0] C:\Users\Eric\.android\build-cache\7fcf8c72f5ca72ddfcc85068534aed80d0ed0be4\output\AndroidManifest.xml:7:5-43
 MERGED from [jp.wasabeef:recyclerview-animators:2.2.7] C:\Users\Eric\.android\build-cache\9268427e04057492ee1882d4f2c5d040e0b22c22\output\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:recyclerview-v7:26.0.0] C:\Users\Eric\.android\build-cache\333e07e4ccc03758394fd3ab56029025e8f13c5e\output\AndroidManifest.xml:20:5-44
+MERGED from [com.github.medyo:android-about-page:1.2] C:\Users\Eric\.android\build-cache\a2e4132018a1e9206a8b1ee7a6c9d46713768cfd\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Eric\.android\build-cache\f878ee2f6dbe93da0ded2599b219514ead986ff2\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Eric\.android\build-cache\5c5915b95226830a056166bf324158dcc48a2325\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Eric\.android\build-cache\28e6f4c762af07bc3a721064b88bedac85082dd5\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Eric\.android\build-cache\cda9c0dfb4f897bd2f6adec2c7b1d1b599097d57\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Eric\.android\build-cache\5a745a0f6e843d9c42e3b8f85fe792132a27864d\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\0b2df8882dfc75414aebdb1a73a066839f893f55\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\1a3cd4ccf641dfed50e3b68e5288f71aca1b9cf0\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Eric\.android\build-cache\d0fe6dbee219111ee3a9fd46918a288aba230dec\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Eric\.android\build-cache\b245d7b938662c61ccf81100e4d80437db8d9de9\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
@@ -149,16 +150,16 @@ MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Eric\.android\b
 		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.0.0] C:\Users\Eric\.android\build-cache\7d95d034197dab837cbeefe727f798c213170457\output\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Eric\.android\build-cache\f878ee2f6dbe93da0ded2599b219514ead986ff2\output\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\0b2df8882dfc75414aebdb1a73a066839f893f55\output\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\1a3cd4ccf641dfed50e3b68e5288f71aca1b9cf0\output\AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:transition:26.0.0] C:\Users\Eric\.android\build-cache\ace9f8556a14618cf9695d7d57a6f1ea4ee4d66c\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.0.0] C:\Users\Eric\.android\build-cache\34fb0c46b147fd20f563a294a5378d5b0a5274eb\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.0.0] C:\Users\Eric\.android\build-cache\333e07e4ccc03758394fd3ab56029025e8f13c5e\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:appcompat-v7:26.0.0] C:\Users\Eric\.android\build-cache\f878ee2f6dbe93da0ded2599b219514ead986ff2\output\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-v4:26.0.0] C:\Users\Eric\.android\build-cache\5c5915b95226830a056166bf324158dcc48a2325\output\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-media-compat:26.0.0] C:\Users\Eric\.android\build-cache\28e6f4c762af07bc3a721064b88bedac85082dd5\output\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-fragment:26.0.0] C:\Users\Eric\.android\build-cache\cda9c0dfb4f897bd2f6adec2c7b1d1b599097d57\output\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-core-utils:26.0.0] C:\Users\Eric\.android\build-cache\5a745a0f6e843d9c42e3b8f85fe792132a27864d\output\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:cardview-v7:26.0.0] C:\Users\Eric\.android\build-cache\34fb0c46b147fd20f563a294a5378d5b0a5274eb\output\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.0.0] C:\Users\Eric\.android\build-cache\333e07e4ccc03758394fd3ab56029025e8f13c5e\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\0b2df8882dfc75414aebdb1a73a066839f893f55\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\1a3cd4ccf641dfed50e3b68e5288f71aca1b9cf0\output\AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Eric\.android\build-cache\d0fe6dbee219111ee3a9fd46918a288aba230dec\output\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Eric\.android\build-cache\b245d7b938662c61ccf81100e4d80437db8d9de9\output\AndroidManifest.xml:26:9-28:38
 	android:value

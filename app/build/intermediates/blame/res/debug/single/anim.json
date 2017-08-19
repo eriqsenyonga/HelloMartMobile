@@ -1,9 +1,5 @@
 [
     {
-        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\505f2279d0853c10e4703a07178e838f8478bec6\\output\\res\\anim\\design_fab_in.xml"
-    },
-    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\anim\\abc_slide_out_top.xml"
     },
@@ -14,10 +10,6 @@
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_left.xml",
         "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\anim\\slide_in_left.xml"
-    },
-    {
-        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\505f2279d0853c10e4703a07178e838f8478bec6\\output\\res\\anim\\design_fab_out.xml"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_right.xml",

@@ -13,5 +13,7 @@
 
     <include layout="@layout/error_layout_view" />
 
+    <include layout="@layout/empty_recyclerview_layout"/>
+
 
 </FrameLayout>

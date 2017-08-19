@@ -51,7 +51,7 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
     LinearLayout errorLayout;
     Button bReload;
     TextView tvErrorMsg;
-
+    LinearLayout emptyLayout;
     String queryString;
     Toolbar toolbar;
 
@@ -82,6 +82,7 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
         errorLayout = (LinearLayout) findViewById(R.id.error_layout);
         bReload = (Button) findViewById(R.id.b_reload);
         tvErrorMsg = (TextView) findViewById(R.id.tv_error_message);
+        emptyLayout = (LinearLayout) findViewById(R.id.empty_layout);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -336,6 +337,12 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
 
         adapter.addAll(itemsToShow);
 
+        if(adapter.getItemCount() > 0){
+            emptyLayout.setVisibility(View.GONE);
+        }else{
+            emptyLayout.setVisibility(View.VISIBLE);
+        }
+
         if (currentPage < TOTAL_PAGES) adapter.addLoadingFooter();
         else isLastPage = true;
 
@@ -357,6 +364,9 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         if (v == bReload) {
+
+            errorLayout.setVisibility(View.GONE);
+            pbLoading.setVisibility(View.VISIBLE);
             fetchItemsJson();
         }
     }

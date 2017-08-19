@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,12 +26,15 @@ public class CartFragment extends Fragment implements View.OnClickListener {
     RecyclerView rvCart;
     LinearLayoutManager linearLayoutManager;
     Toolbar toolbar;
-    Button bCheckOut;
+    Button bCheckOut, bShopNow;
     TextView tvGrandTotal;
+    TextView tvEmptyMsg;
     String testVCS;
     RecyclerViewAdapterCart adapter;
+    LinearLayout emptyLayout;
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
     Cart cart;
+    MainActivity mainActivity;
 
 
     public CartFragment() {
@@ -47,6 +51,9 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         tvGrandTotal = (TextView) v.findViewById(R.id.tv_grand_total);
         bCheckOut = (Button) v.findViewById(R.id.b_checkout);
         rvCart = (RecyclerView) v.findViewById(R.id.recycler_view);
+        emptyLayout = (LinearLayout) v.findViewById(R.id.empty_layout);
+        tvEmptyMsg = (TextView) v.findViewById(R.id.tv_empty_message);
+        bShopNow = (Button) v.findViewById(R.id.b_shop_now);
         return v;
     }
 
@@ -55,6 +62,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
 
         cart = myApplicationClass.getCart();
+        mainActivity = (MainActivity) getActivity();
 
 
         rvCart.hasFixedSize();
@@ -75,9 +83,22 @@ public class CartFragment extends Fragment implements View.OnClickListener {
 
         rvCart.setAdapter(adapter);
 
+        if (adapter.getItemCount() > 1) {
+            rvCart.setVisibility(View.VISIBLE);
+            emptyLayout.setVisibility(View.GONE);
+            bCheckOut.setEnabled(true);
+        } else {
+            rvCart.setVisibility(View.GONE);
+            emptyLayout.setVisibility(View.VISIBLE);
+            tvEmptyMsg.setText("Your cart is empty");
+            bShopNow.setVisibility(View.VISIBLE);
+            bCheckOut.setEnabled(false);
+        }
+
         tvGrandTotal.setText(cart.getCartGrandTotal());
 
         bCheckOut.setOnClickListener(this);
+        bShopNow.setOnClickListener(this);
 
 
     }
@@ -93,5 +114,15 @@ public class CartFragment extends Fragment implements View.OnClickListener {
             startActivity(i);
 
         }
+
+        if(v == bShopNow){
+
+
+            mainActivity.showShopFragment();
+
+
+        }
     }
+
+
 }

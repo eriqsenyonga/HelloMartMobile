@@ -53,6 +53,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
     UsefulFunctions usefulFunctions;
     ProgressBar pbLoading;
     LinearLayout errorLayout;
+    LinearLayout emptyLayout;
     Button bReload;
     TextView tvErrorMsg;
     String categorySlug;
@@ -103,6 +104,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
         errorLayout = (LinearLayout) v.findViewById(R.id.error_layout);
         bReload = (Button) v.findViewById(R.id.b_reload);
         tvErrorMsg = (TextView) v.findViewById(R.id.tv_error_message);
+        emptyLayout = (LinearLayout) v.findViewById(R.id.empty_layout);
         return v;
     }
 
@@ -121,7 +123,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
         //  recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
         recyclerView.setLayoutManager(gridLayoutManager);
         SlideInUpAnimator slideInUpAnimator = new SlideInUpAnimator();
-       // slideInUpAnimator.setAddDuration(500);
+        // slideInUpAnimator.setAddDuration(500);
 
         recyclerView.setItemAnimator(slideInUpAnimator);
 
@@ -435,6 +437,12 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
 
         adapter.addAll(itemsToShow);
 
+        if (adapter.getItemCount() > 0) {
+            emptyLayout.setVisibility(View.GONE);
+        } else {
+            emptyLayout.setVisibility(View.VISIBLE);
+        }
+
         if (currentPage < TOTAL_PAGES) adapter.addLoadingFooter();
         else isLastPage = true;
 
@@ -457,6 +465,9 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         if (v == bReload) {
 
+            errorLayout.setVisibility(View.GONE);
+            pbLoading.setVisibility(View.VISIBLE);
+
             if (KEY_WHICH_GET == ALL_ITEMS) {
                 fetchItemsJson();
             } else if (KEY_WHICH_GET == CATEGORY_ITEMS) {
@@ -466,7 +477,6 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
 
         }
     }
-
 
 
 }

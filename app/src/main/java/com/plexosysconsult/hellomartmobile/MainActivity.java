@@ -84,14 +84,14 @@ public class MainActivity extends AppCompatActivity
             }
 
             if (id == R.id.nav_my_account) {
-                // fragment = new MyAccountFragment();
-                // title = "My Account";
+                fragment = new MyAccountFragment();
+                title = "My Account";
 
             }
 
             if (id == R.id.nav_orders) {
-                //   fragment = new OrdersFragment();
-                //  title = "Orders";
+                fragment = new OrdersFragment();
+                title = "Orders";
             }
 
             if (id == R.id.nav_cart) {
@@ -171,12 +171,16 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_shop) {
+
             fragment = new ShopFragment();
+
         } else if (id == R.id.nav_categories) {
 
             fragment = new CategoriesFragment();
 
         } else if (id == R.id.nav_my_account) {
+
+            fragment = new MyAccountFragment();
 
         } else if (id == R.id.nav_cart) {
 
@@ -184,9 +188,13 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_orders) {
 
-        } else if (id == R.id.nav_share) {
+            fragment = new OrdersFragment();
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_settings) {
+
+        } else if (id == R.id.nav_about) {
+
+            fragment = new AboutUsFragment();
 
         }
 
@@ -252,6 +260,16 @@ public class MainActivity extends AppCompatActivity
 
         navigationView.setCheckedItem(itemId);
         posSavedEditor.putInt("last_main_position", itemId).apply();
+
+    }
+
+    public void showShopFragment() {
+
+        fm.beginTransaction().replace(R.id.contentMain, new ShopFragment()).commit();
+        getSupportActionBar().setTitle(R.string.shop);
+        getSupportActionBar().setSubtitle("");
+        setNavigationViewCheckedItem(R.id.nav_shop);
+
 
     }
 

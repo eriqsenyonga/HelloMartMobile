@@ -7,20 +7,22 @@
 
 
     <TextView
+        style="@style/Base.TextAppearance.AppCompat.Medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:gravity="right"
         android:text="Sub Total"
 
         />
 
 
-
     <TextView
         android:id="@+id/tv_total_price"
+        style="@style/Base.TextAppearance.AppCompat.Medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:gravity="right"
         android:text="UGX 100,000"
         android:textStyle="bold" />
