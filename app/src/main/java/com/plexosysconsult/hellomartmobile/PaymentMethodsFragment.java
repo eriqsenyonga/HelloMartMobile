@@ -56,7 +56,7 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
     public void onResume() {
         super.onResume();
 
-        checkoutActivity.setActionBarSubtitle("Billing Details");
+        checkoutActivity.setActionBarSubtitle("Payment Method");
 
     }
 

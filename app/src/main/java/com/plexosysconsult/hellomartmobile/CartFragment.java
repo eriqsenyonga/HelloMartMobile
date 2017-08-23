@@ -110,7 +110,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
             //   Toast.makeText(getActivity(),"Go to checkout", Toast.LENGTH_LONG).show();
 
 
-            Intent i = new Intent(getActivity(), BillingDetails.class);
+            Intent i = new Intent(getActivity(), CheckoutActivity.class);
             startActivity(i);
 
         }

@@ -21,7 +21,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fm = getSupportFragmentManager();
 
@@ -47,7 +47,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
     public void showPesapalIframe() {
 
-        fm.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.contentMain, new PesapalIframeFragment()).addToBackStack(null).commit();
+        fm.beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right).replace(R.id.contentMain, new MyAccountFragment()).addToBackStack(null).commit();
 
     }
 }
