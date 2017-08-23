@@ -55,6 +55,7 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity android:name="com.plexosysconsult.hellomartmobile.OrderSuccessActivity" />
+        <activity android:name="com.plexosysconsult.hellomartmobile.CheckoutActivity" />
 
         <meta-data
             android:name="android.support.VERSION"

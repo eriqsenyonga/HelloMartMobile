@@ -3,6 +3,15 @@
 
     <item
         is-multidex="false"
+        jar="C:\Users\Eric\.android\build-cache\8f54e29bf5bf643482c272d475e49e9d5d3faff3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="18e4d2146490b76b3282f1949ed6ffd052a0fc23">
+        <dex dex="E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\build\intermediates\pre-dexed\debug\classes_d7a9088e6738c67225cba33310e182eba822471c.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Eric\.android\build-cache\a2e4132018a1e9206a8b1ee7a6c9d46713768cfd\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"

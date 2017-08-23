@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:2:1-54:12
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:2:1-55:12
 	package
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:3:5-50
 		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\
 	android:name
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:7:5-52:19
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:7:5-53:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Eric\.android\build-cache\35ff94eecb6f32488034375abe31360f778375bc\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.0.0] C:\Users\Eric\.android\build-cache\7d95d034197dab837cbeefe727f798c213170457\output\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:transition:26.0.0] C:\Users\Eric\.android\build-cache\ace9f8556a14618cf9695d7d57a6f1ea4ee4d66c\output\AndroidManifest.xml:22:5-26:19
@@ -35,6 +35,7 @@ MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Eric\
 MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\1a3cd4ccf641dfed50e3b68e5288f71aca1b9cf0\output\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Eric\.android\build-cache\d0fe6dbee219111ee3a9fd46918a288aba230dec\output\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Eric\.android\build-cache\b245d7b938662c61ccf81100e4d80437db8d9de9\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\Eric\.android\build-cache\8f54e29bf5bf643482c272d475e49e9d5d3faff3\output\AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:11:9-41
 	android:supportsRtl
@@ -116,9 +117,13 @@ ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\
 	android:name
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:48:17-54
 activity#com.plexosysconsult.hellomartmobile.OrderSuccessActivity
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:51:9-67
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:51:9-58
 	android:name
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:51:19-55
+activity#com.plexosysconsult.hellomartmobile.CheckoutActivity
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:52:9-63
+	android:name
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:52:19-51
 uses-sdk
 INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Eric\.android\build-cache\35ff94eecb6f32488034375abe31360f778375bc\output\AndroidManifest.xml:5:5-7:41
@@ -140,6 +145,7 @@ MERGED from [com.android.support:animated-vector-drawable:26.0.0] C:\Users\Eric\
 MERGED from [com.android.support:support-vector-drawable:26.0.0] C:\Users\Eric\.android\build-cache\1a3cd4ccf641dfed50e3b68e5288f71aca1b9cf0\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:26.0.0] C:\Users\Eric\.android\build-cache\d0fe6dbee219111ee3a9fd46918a288aba230dec\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:26.0.0] C:\Users\Eric\.android\build-cache\b245d7b938662c61ccf81100e4d80437db8d9de9\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\Eric\.android\build-cache\8f54e29bf5bf643482c272d475e49e9d5d3faff3\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:26.0.0] C:\Users\Eric\.android\build-cache\7d95d034197dab837cbeefe727f798c213170457\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion

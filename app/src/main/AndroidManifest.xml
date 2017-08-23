@@ -48,7 +48,8 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".OrderSuccessActivity"></activity>
+        <activity android:name=".OrderSuccessActivity" />
+        <activity android:name=".CheckoutActivity"></activity>
     </application>
 
 </manifest>
