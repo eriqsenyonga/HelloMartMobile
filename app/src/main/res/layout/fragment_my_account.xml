@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,38 +8,22 @@
     tools:context="com.plexosysconsult.hellomartmobile.MyAccountFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <!-- <TextView
-         style="@style/Base.TextAppearance.AppCompat.Large"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:gravity="center"
-         android:text="My Account"
-         android:layout_gravity="center"/>
-
-     <TextView
-         style="@style/Base.TextAppearance.AppCompat.Medium"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:gravity="center"
-         android:text="coming soon!!"
-
-         android:layout_gravity="center"/>
-
-
-         -->
-
-    <WebView
-        android:id="@+id/webview"
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="My Account" />
 
-
-    <im.delight.android.webview.AdvancedWebView
-        android:id="@+id/awebview"
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat.Medium"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
 
-    <include layout="@layout/loading_spinner" />
+        android:text="coming soon!!" />
 
-</FrameLayout>
+
+</LinearLayout>

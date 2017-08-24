@@ -29,7 +29,7 @@
                 android:value=".SearchableActivity" />
         </activity>
         <activity
-            android:name=".BillingDetails"
+            android:name=".BillingDetailsActivity"
             android:label="@string/title_activity_billing_details"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">

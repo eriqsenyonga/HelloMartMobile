@@ -19,13 +19,10 @@ import im.delight.android.webview.AdvancedWebView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyAccountFragment extends Fragment implements AdvancedWebView.Listener {
+public class MyAccountFragment extends Fragment {
 
-    ProgressBar pbLoading;
-    WebView webView;
+
     View v;
-    AdvancedWebView aWebView;
-    String callbackUrl = "yourdomain.com";
 
 
     public MyAccountFragment() {
@@ -39,9 +36,6 @@ public class MyAccountFragment extends Fragment implements AdvancedWebView.Liste
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_my_account, container, false);
 
-        webView = (WebView) v.findViewById(R.id.webview);
-        aWebView = (AdvancedWebView) v.findViewById(R.id.awebview);
-        pbLoading = (ProgressBar) v.findViewById(R.id.pb_loading);
 
         return v;
 
@@ -51,70 +45,8 @@ public class MyAccountFragment extends Fragment implements AdvancedWebView.Liste
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        webView.setWebViewClient(new MyBrowser());
-
-        webView.getSettings().setLoadsImagesAutomatically(true);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-
-
-        webView.loadUrl("http://hellomartug.com/pesapal/Pesapal-iframe.php");
-
-
-        aWebView.setListener(getActivity(), this);
-        aWebView.loadUrl("http://hellomartug.com/pesapal/Pesapal-iframe.php");
-
 
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        super.onActivityResult(requestCode, resultCode, intent);
-        aWebView.onActivityResult(requestCode, resultCode, intent);
-        // ...
-    }
 
-    @Override
-    public void onPageStarted(String url, Bitmap favicon) {
-
-        pbLoading.setVisibility(View.VISIBLE);
-
-
-    }
-
-    @Override
-    public void onPageFinished(String url) {
-        pbLoading.setVisibility(View.GONE);
-
-        if (url.contains(callbackUrl)) {
-
-            Intent i = new Intent(getActivity(), OrderSuccessActivity.class);
-            startActivity(i);
-
-
-        }
-    }
-
-    @Override
-    public void onPageError(int errorCode, String description, String failingUrl) {
-
-    }
-
-    @Override
-    public void onDownloadRequested(String url, String suggestedFilename, String mimeType, long contentLength, String contentDisposition, String userAgent) {
-
-    }
-
-    @Override
-    public void onExternalPageRequest(String url) {
-
-    }
-
-    private class MyBrowser extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
-    }
 }

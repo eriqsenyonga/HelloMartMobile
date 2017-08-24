@@ -35,7 +35,7 @@
                 android:value=".SearchableActivity" />
         </activity>
         <activity
-            android:name="com.plexosysconsult.hellomartmobile.BillingDetails"
+            android:name="com.plexosysconsult.hellomartmobile.BillingDetailsActivity"
             android:label="@string/title_activity_billing_details"
             android:parentActivityName="com.plexosysconsult.hellomartmobile.MainActivity"
             android:theme="@style/AppTheme" >

@@ -23,6 +23,8 @@ public class MyApplicationClass extends Application {
     List<Category> subCategoryList;
     String lastSubCategory;
     Cart cart;
+    BillingDetails billingDetails;
+
 
     @Override
     public void onCreate() {
@@ -31,6 +33,7 @@ public class MyApplicationClass extends Application {
         mRequestQueue = Volley.newRequestQueue(getApplicationContext());
         categoryList = new ArrayList<>();
         subCategoryList = new ArrayList<>();
+        billingDetails = new BillingDetails();
         cart = new Cart(getApplicationContext());
     }
 
@@ -98,5 +101,13 @@ public class MyApplicationClass extends Application {
 
     public void updateCart(Cart updatedCart) {
         cart = updatedCart;
+    }
+
+    public BillingDetails getBillingDetails() {
+        return billingDetails;
+    }
+
+    public void setBillingDetails(BillingDetails billingDetails) {
+        this.billingDetails = billingDetails;
     }
 }

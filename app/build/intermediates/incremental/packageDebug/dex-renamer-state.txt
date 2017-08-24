@@ -1,4 +1,4 @@
-#Thu Aug 24 01:57:33 EAT 2017
+#Fri Aug 25 00:04:52 EAT 2017
 base.0=E\:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=E\:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

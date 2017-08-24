@@ -82,4 +82,14 @@ public class Cart {
 
     }
 
+    public Long getCartGrandTotalLong(){
+
+        calculateCartTotal();
+
+        Long grandTotal =  bigDecimalClass.addParameters(cartTotal, (long) 5000);
+
+        return grandTotal;
+
+    }
+
 }

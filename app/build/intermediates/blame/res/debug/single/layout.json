@@ -44,12 +44,12 @@
         "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\layout\\app_bar_main.xml"
     },
     {
-        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_order_success.xml",
-        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\layout\\activity_order_success.xml"
-    },
-    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tooltip.xml",
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\layout\\tooltip.xml"
+    },
+    {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_order_success.xml",
+        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\layout\\activity_order_success.xml"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
@@ -72,20 +72,20 @@
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\layout\\abc_list_menu_item_layout.xml"
-    },
-    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_sub_categories.xml",
         "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\layout\\fragment_sub_categories.xml"
     },
     {
-        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\error_layout_view.xml",
@@ -100,12 +100,12 @@
         "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\layout\\content_main.xml"
     },
     {
-        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_category.xml",
-        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\layout\\list_item_category.xml"
-    },
-    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
         "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_category.xml",
+        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\layout\\list_item_category.xml"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",

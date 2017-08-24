@@ -22,7 +22,7 @@ public class BillingDetailsFragment extends Fragment implements View.OnClickList
     Button bGoToPaymentMethods;
 
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
-    Cart cart;
+
     // String URL_PLACE_ORDER = "http://hellomartug.com/example/placeOrder.php";
     // ProgressDialog progressDialog;
 
@@ -70,14 +70,96 @@ public class BillingDetailsFragment extends Fragment implements View.OnClickList
 
         checkoutActivity.setActionBarSubtitle("Billing Details");
 
+        tilFirstName.getEditText().setText(myApplicationClass.getBillingDetails().getFirstName());
+        tilSurName.getEditText().setText(myApplicationClass.getBillingDetails().getSurname());
+        tilDeliveryAddress.getEditText().setText(myApplicationClass.getBillingDetails().getDeliveryAddress());
+        tilEmail.getEditText().setText(myApplicationClass.getBillingDetails().getEmailAddress());
+        tilPhoneNumber.getEditText().setText(myApplicationClass.getBillingDetails().getPhoneNumber());
+        tilTownCity.getEditText().setText(myApplicationClass.getBillingDetails().getTownCity());
+
     }
 
     @Override
     public void onClick(View view) {
         if (view == bGoToPaymentMethods) {
 
-            checkoutActivity.showPaymentMethods();
+
+            if (checkBillingDetailsComplete() == true) {
+
+
+                BillingDetails mBillingDetails = new BillingDetails();
+                mBillingDetails.setFirstName(tilFirstName.getEditText().getText().toString());
+                mBillingDetails.setSurname(tilSurName.getEditText().getText().toString());
+                mBillingDetails.setDeliveryAddress(tilDeliveryAddress.getEditText().getText().toString());
+                mBillingDetails.setEmailAddress(tilEmail.getEditText().getText().toString());
+                mBillingDetails.setPhoneNumber(tilPhoneNumber.getEditText().getText().toString());
+                mBillingDetails.setTownCity(tilTownCity.getEditText().getText().toString());
+
+                myApplicationClass.setBillingDetails(mBillingDetails);
+
+
+                checkoutActivity.showPaymentMethods();
+
+            } else {
+
+                //if billing details are not complete
+
+            }
 
         }
+    }
+
+
+    private boolean checkBillingDetailsComplete() {
+
+//double check the entries...if they are all complete then return true
+        if (tilFirstName.getEditText().getText().toString().isEmpty()) {
+
+            tilFirstName.getEditText().setError("Enter First Name");
+
+            return false;
+
+        }
+
+        if (tilSurName.getEditText().getText().toString().isEmpty()) {
+
+            tilSurName.getEditText().setError("Enter surname");
+
+            return false;
+
+        }
+
+        if (tilPhoneNumber.getEditText().getText().toString().isEmpty()) {
+
+            tilPhoneNumber.getEditText().setError("Enter Phone Number");
+
+            return false;
+
+        }
+        if (tilEmail.getEditText().getText().toString().isEmpty()) {
+
+            tilEmail.getEditText().setError("Enter E-mail");
+
+            return false;
+
+        }
+        if (tilDeliveryAddress.getEditText().getText().toString().isEmpty()) {
+
+            tilDeliveryAddress.getEditText().setError("Enter Delivery Address");
+
+
+            return false;
+
+        }
+        if (tilTownCity.getEditText().getText().toString().isEmpty()) {
+
+            tilTownCity.getEditText().setError("Enter Town or City");
+
+            return false;
+
+        }
+
+
+        return true;
     }
 }
