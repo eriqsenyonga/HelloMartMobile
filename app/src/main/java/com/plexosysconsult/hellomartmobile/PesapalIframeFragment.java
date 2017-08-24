@@ -63,6 +63,7 @@ public class PesapalIframeFragment extends Fragment implements AdvancedWebView.L
         super.onActivityCreated(savedInstanceState);
 
         aWebView.setListener(getActivity(), this);
+        aWebView.setVerticalScrollBarEnabled(true);
 
         billingDetails = myApplicationClass.getBillingDetails();
         cart = myApplicationClass.getCart();
