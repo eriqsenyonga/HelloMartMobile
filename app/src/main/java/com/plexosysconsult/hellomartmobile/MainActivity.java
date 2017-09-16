@@ -2,6 +2,7 @@ package com.plexosysconsult.hellomartmobile;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +19,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     SharedPreferences mPositionSavedPrefs;
     SharedPreferences.Editor posSavedEditor;
+    ImageView redDot;
+    MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,16 +88,6 @@ public class MainActivity extends AppCompatActivity
                 title = "Shop";
             }
 
-            if (id == R.id.nav_my_account) {
-                fragment = new MyAccountFragment();
-                title = "My Account";
-
-            }
-
-            if (id == R.id.nav_orders) {
-                fragment = new OrdersFragment();
-                title = "Orders";
-            }
 
             if (id == R.id.nav_cart) {
                 fragment = new CartFragment();
@@ -105,6 +100,21 @@ public class MainActivity extends AppCompatActivity
                 fragment = new CategoriesFragment();
                 title = "Categories";
             }
+
+            /*
+
+            if (id == R.id.nav_my_account) {
+                fragment = new MyAccountFragment();
+                title = "My Account";
+
+            }
+
+            if (id == R.id.nav_orders) {
+                fragment = new OrdersFragment();
+                title = "Orders";
+            }
+
+            */
 
             if (fragment != null) {
 
@@ -139,6 +149,11 @@ public class MainActivity extends AppCompatActivity
                 (SearchView) menu.findItem(R.id.action_search).getActionView();
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getComponentName()));
+
+        final View notifications = menu.findItem(R.id.action_cart).getActionView();
+
+        redDot = (ImageView) notifications.findViewById(R.id.iv_red_notification);
+
 
         return true;
 
@@ -178,13 +193,16 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new CategoriesFragment();
 
-        } else if (id == R.id.nav_my_account) {
-
-            fragment = new MyAccountFragment();
-
         } else if (id == R.id.nav_cart) {
 
             fragment = new CartFragment();
+
+        }
+
+        /*
+        else if (id == R.id.nav_my_account) {
+
+            fragment = new MyAccountFragment();
 
         } else if (id == R.id.nav_orders) {
 
@@ -192,7 +210,10 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_settings) {
 
-        } else if (id == R.id.nav_about) {
+        }
+
+        */
+        else if (id == R.id.nav_about) {
 
             fragment = new AboutUsFragment();
 
@@ -270,6 +291,34 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setSubtitle("");
         setNavigationViewCheckedItem(R.id.nav_shop);
 
+
+    }
+
+
+    public void checkCartForItems() {
+
+        if (!myApplicationClass.getCart().getCurrentCartItems().isEmpty()) {
+            redDot.setVisibility(View.VISIBLE);
+        } else {
+            redDot.setVisibility(View.GONE);
+        }
+
+
+    }
+
+    public void OpenCart(View v) {
+
+        //  Toast.makeText(this, "Open cart on click", Toast.LENGTH_LONG).show();
+
+        if (myApplicationClass.getCart().getCurrentCartItems().isEmpty()) {
+
+            Toast.makeText(this, "Cart is empty", Toast.LENGTH_LONG).show();
+
+
+        } else {
+
+            openCart();
+        }
 
     }
 

@@ -46,9 +46,6 @@ public class AboutHelloMartFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-
-
-
         String versionName = BuildConfig.VERSION_NAME;
 
         Element versionElement = new Element();
@@ -56,7 +53,7 @@ public class AboutHelloMartFragment extends Fragment {
 
         Element callElement = new Element();
         callElement.setTitle("Call Us");
-        callElement.setValue("0701885127");
+        callElement.setValue("0704807790");
         callElement.setIconDrawable(R.drawable.ic_call_black_24dp);
         callElement.setOnClickListener(new View.OnClickListener() {
             @Override

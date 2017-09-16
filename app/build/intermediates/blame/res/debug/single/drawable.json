@@ -68,6 +68,10 @@
         "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\drawable\\logo2.png"
     },
     {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\line_divider.xml",
+        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\drawable\\line_divider.xml"
+    },
+    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
@@ -96,6 +100,10 @@
         "source": "C:\\Users\\Eric\\.android\\build-cache\\7d95d034197dab837cbeefe727f798c213170457\\output\\res\\drawable\\design_snackbar_background.xml"
     },
     {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_search.png",
+        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\drawable\\ic_search.png"
+    },
+    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
@@ -110,6 +118,14 @@
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_profile.png",
+        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\drawable\\ic_profile.png"
+    },
+    {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_add_to_cart.png",
+        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\drawable\\ic_add_to_cart.png"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tooltip_frame_dark.xml",
@@ -148,6 +164,10 @@
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_dot_24.png",
+        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\drawable\\notification_dot_24.png"
+    },
+    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\about_icon_instagram.xml",
         "source": "C:\\Users\\Eric\\.android\\build-cache\\a2e4132018a1e9206a8b1ee7a6c9d46713768cfd\\output\\res\\drawable\\about_icon_instagram.xml"
     },
@@ -174,6 +194,10 @@
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cart.png",
+        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\drawable\\cart.png"
     },
     {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\dp.jpg",

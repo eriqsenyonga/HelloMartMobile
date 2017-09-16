@@ -296,6 +296,10 @@
         "source": "C:\\Users\\Eric\\.android\\build-cache\\f878ee2f6dbe93da0ded2599b219514ead986ff2\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
+        "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_layout.xml",
+        "source": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\src\\main\\res\\layout\\notification_layout.xml"
+    },
+    {
         "merged": "E:\\Android Studio Projects\\HelloMartMobileMaster\\HelloMartMobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\Eric\\.android\\build-cache\\b245d7b938662c61ccf81100e4d80437db8d9de9\\output\\res\\layout\\notification_template_part_time.xml"
     },

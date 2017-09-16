@@ -70,7 +70,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         linearLayoutManager = new LinearLayoutManager(getActivity());
 
         rvCart.setLayoutManager(linearLayoutManager);
-        rvCart.addItemDecoration(new ListDividerDecoration(getActivity()));
+//        rvCart.addItemDecoration(new ListDividerDecoration(getActivity()));
 
         adapter = new RecyclerViewAdapterCart(getActivity());
 

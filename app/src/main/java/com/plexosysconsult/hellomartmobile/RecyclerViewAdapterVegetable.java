@@ -33,24 +33,36 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
     private static final int ITEM = 0;
     private static final int LOADING = 1;
 
+
+    public static int KEY_MAIN_ACTIVITY = 1;
+    public static int KEY_SEARCHABLE_ACTIVITY = 2;
+
     Context context;
     List<Item> items;
     BigDecimalClass bigDecimalClass;
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
     MainActivity mainActivity;
+    SearchableActivity searchableActivity;
+    boolean isMainActivityContext = false;
     Cart cart;
 
     // flag for footer ProgressBar (i.e. last item of list)
     private boolean isLoadingAdded = false;
 
 
-    public RecyclerViewAdapterVegetable(Context context) {
+    public RecyclerViewAdapterVegetable(Context context, int whichActivity) {
 
         this.context = context;
 
         cart = myApplicationClass.getCart();
 
-        //   mainActivity = (MainActivity) context;
+        if (whichActivity == KEY_MAIN_ACTIVITY) {
+
+            isMainActivityContext = true;
+            mainActivity = (MainActivity) context;
+        } else {
+            isMainActivityContext = false;
+        }
 
         bigDecimalClass = new BigDecimalClass(context);
 
@@ -141,7 +153,9 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
                                                     //  Toast.makeText(context, items.get(position).getItemName() + ": " + items.get(position).getItemPrice(), Toast.LENGTH_LONG).show();
 
 
-                                                    LayoutInflater inflater = LayoutInflater.from(context);
+                                                  //  LayoutInflater inflater = LayoutInflater.from(context);
+                                                    LayoutInflater inflater = (LayoutInflater) context.getSystemService (Context.LAYOUT_INFLATER_SERVICE);
+                                                //    LayoutInflater inflater = context.getLayoutInflater();
 
                                                     View addToCartDialog = inflater.inflate(R.layout.dialog_add_item_to_cart_details, null);
 
@@ -296,7 +310,10 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
 
                                                                 myApplicationClass.updateCart(cart);
 
-                                                                // mainActivity.checkCartForItems();
+
+                                                                if (isMainActivityContext) {
+                                                                    mainActivity.checkCartForItems();
+                                                                }
 
                                                                 d.dismiss();
                                                             }

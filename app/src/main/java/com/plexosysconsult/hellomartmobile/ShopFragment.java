@@ -117,7 +117,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
 
         recyclerView.hasFixedSize();
 
-        adapter = new RecyclerViewAdapterVegetable(getActivity());
+        adapter = new RecyclerViewAdapterVegetable(getActivity(), RecyclerViewAdapterVegetable.KEY_MAIN_ACTIVITY);
 
         gridLayoutManager = new GridLayoutManager(getActivity(), 3);
         //  recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));

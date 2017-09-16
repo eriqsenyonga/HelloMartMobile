@@ -18,24 +18,30 @@
             android:title="Cart" />
 
 
-        <item
-            android:id="@+id/nav_my_account"
-            android:icon="@drawable/ic_action_account_box"
-            android:title="@string/my_account" />
+        <!--       <item
+                   android:id="@+id/nav_my_account"
+                   android:icon="@drawable/ic_action_account_box"
+                   android:title="@string/my_account" />
 
 
-        <item
-            android:id="@+id/nav_orders"
-            android:icon="@drawable/ic_action_history"
-            android:title="@string/orders" />
+               <item
+                   android:id="@+id/nav_orders"
+                   android:icon="@drawable/ic_action_history"
+                   android:title="@string/orders" />
+
+
+          -->
     </group>
 
 
     <group android:id="@+id/therest">
-        <item
-            android:id="@+id/nav_settings"
+        <!--     <item
+                 android:id="@+id/nav_settings"
 
-            android:title="@string/settings" />
+                 android:title="@string/settings" />
+
+
+                 -->
         <item
             android:id="@+id/nav_about"
 

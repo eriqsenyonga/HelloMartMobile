@@ -53,7 +53,7 @@ public class SubCategoriesFragment extends Fragment {
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.addItemDecoration(new ListDividerDecoration(getActivity()));
+       recyclerView.addItemDecoration(new ListDividerDecoration(getActivity()));
 
         recyclerView.setAdapter(new RecyclerViewAdapterSubCategory(getActivity(), subCategoryList));
 

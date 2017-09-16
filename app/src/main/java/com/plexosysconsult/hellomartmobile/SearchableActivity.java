@@ -91,7 +91,7 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
         usefulFunctions = new UsefulFunctions(this);
 
         recyclerView.hasFixedSize();
-        adapter = new RecyclerViewAdapterVegetable(this);
+        adapter = new RecyclerViewAdapterVegetable(this,RecyclerViewAdapterVegetable.KEY_SEARCHABLE_ACTIVITY);
 
         gridLayoutManager = new GridLayoutManager(this, 3);
         //  recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));

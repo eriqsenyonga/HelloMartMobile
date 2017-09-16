@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:2:1-55:12
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:3:5-50
 		INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\
 	android:name
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:7:5-53:19
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:7:5-54:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Eric\.android\build-cache\35ff94eecb6f32488034375abe31360f778375bc\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.0.0] C:\Users\Eric\.android\build-cache\7d95d034197dab837cbeefe727f798c213170457\output\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:transition:26.0.0] C:\Users\Eric\.android\build-cache\ace9f8556a14618cf9695d7d57a6f1ea4ee4d66c\output\AndroidManifest.xml:22:5-26:19
@@ -39,91 +39,93 @@ MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\Eric
 	android:label
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:11:9-41
 	android:supportsRtl
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:14:9-35
 	android:roundIcon
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:12:9-54
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:13:9-54
 	android:allowBackup
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:9:9-35
 	android:icon
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:10:9-43
+	android:largeHeap
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:12:9-33
 	android:theme
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:14:9-40
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:15:9-40
 	android:name
 		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:8:9-43
 activity#com.plexosysconsult.hellomartmobile.SplashActivity
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:15:9-21:20
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:16:9-22:20
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:15:19-49
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:16:19-49
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:20:27-74
 activity#com.plexosysconsult.hellomartmobile.LoginActivity
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:22:9-51
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:23:9-51
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:22:19-48
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:23:19-48
 activity#com.plexosysconsult.hellomartmobile.MainActivity
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:23:9-30:20
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:24:9-31:20
 	android:label
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:25:13-56
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:26:13-56
 	android:theme
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:26:13-44
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:27:13-44
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:24:13-41
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:25:13-41
 meta-data#android.app.default_searchable
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:27:13-29:55
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:28:13-30:55
 	android:value
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:29:17-52
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:30:17-52
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:28:17-62
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:29:17-62
 activity#com.plexosysconsult.hellomartmobile.BillingDetailsActivity
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:31:9-39:20
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:32:9-40:20
 	android:label
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:33:13-67
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:34:13-67
 	android:parentActivityName
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:34:13-55
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:35:13-55
 	android:theme
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:35:13-44
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:36:13-44
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:32:13-51
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:33:13-51
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:36:13-38:84
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:37:13-39:84
 	android:value
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:38:17-81
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:39:17-81
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:37:17-63
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:38:17-63
 activity#com.plexosysconsult.hellomartmobile.SearchableActivity
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:40:9-50:20
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:41:9-51:20
 	android:launchMode
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:42:13-43
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:43:13-43
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:41:13-47
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:42:13-47
 intent-filter#android.intent.action.SEARCH
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:43:13-45:29
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:44:13-46:29
 action#android.intent.action.SEARCH
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:44:17-71
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:45:17-71
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:44:25-68
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:45:25-68
 meta-data#android.app.searchable
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:47:13-49:54
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:48:13-50:54
 	android:resource
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:49:17-51
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:50:17-51
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:48:17-54
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:49:17-54
 activity#com.plexosysconsult.hellomartmobile.OrderSuccessActivity
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:51:9-58
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:52:9-58
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:51:19-55
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:52:19-55
 activity#com.plexosysconsult.hellomartmobile.CheckoutActivity
-ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:52:9-63
+ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:53:9-63
 	android:name
-		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:52:19-51
+		ADDED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml:53:19-51
 uses-sdk
 INJECTED from E:\Android Studio Projects\HelloMartMobileMaster\HelloMartMobile\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Eric\.android\build-cache\35ff94eecb6f32488034375abe31360f778375bc\output\AndroidManifest.xml:5:5-7:41
