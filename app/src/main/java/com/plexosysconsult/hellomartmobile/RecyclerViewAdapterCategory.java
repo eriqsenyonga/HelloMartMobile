@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,6 +90,8 @@ class RecyclerViewAdapterCategory extends RecyclerView.Adapter<RecyclerViewAdapt
 
                     //here we will display the products for this particular category
 
+                    mainActivity.showProductsInCategory(category.getSlug(), category.getName());
+
 
                 } else {
 
@@ -97,9 +100,6 @@ class RecyclerViewAdapterCategory extends RecyclerView.Adapter<RecyclerViewAdapt
                     myApplicationClass.setLastSubCategory(category.getName());
 
                     mainActivity.showSubcategories(category.getName());
-
-
-
 
                 }
 
@@ -120,6 +120,7 @@ class RecyclerViewAdapterCategory extends RecyclerView.Adapter<RecyclerViewAdapt
 
         TextView tvName, tvCount;
         ItemClickListener itemClickListener;
+        MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
 
 
         public ViewHolder(View itemView) {
@@ -127,6 +128,9 @@ class RecyclerViewAdapterCategory extends RecyclerView.Adapter<RecyclerViewAdapt
 
             tvName = (TextView) itemView.findViewById(R.id.tv_name);
             tvCount = (TextView) itemView.findViewById(R.id.tv_count);
+
+            tvName.setTypeface(myApplicationClass.getRegularTypeface());
+            tvCount.setTypeface(myApplicationClass.getRegularTypeface());
 
             itemView.setOnClickListener(this);
 

@@ -1,6 +1,8 @@
 package com.plexosysconsult.hellomartmobile;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 /**
@@ -18,7 +21,7 @@ public class BillingDetailsFragment extends Fragment implements View.OnClickList
 
     View v;
     TextInputLayout tilFirstName, tilSurName, tilEmail, tilPhoneNumber,
-            tilPassword, tilReenterPassword, tilDeliveryAddress, tilTownCity;
+            tilPassword, tilReenterPassword, tilDeliveryAddress, tilTownCity, tilOrderNotes;
     Button bGoToPaymentMethods;
 
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
@@ -27,6 +30,10 @@ public class BillingDetailsFragment extends Fragment implements View.OnClickList
     // ProgressDialog progressDialog;
 
     CheckoutActivity checkoutActivity;
+
+    SharedPreferences userSharedPrefs;
+    int customerId = 0;
+
 
     public BillingDetailsFragment() {
         // Required empty public constructor
@@ -48,6 +55,7 @@ public class BillingDetailsFragment extends Fragment implements View.OnClickList
         tilPassword = (TextInputLayout) v.findViewById(R.id.til_password);
         tilTownCity = (TextInputLayout) v.findViewById(R.id.til_city_town);
         tilReenterPassword = (TextInputLayout) v.findViewById(R.id.til_reenter_password);
+        tilOrderNotes = v.findViewById(R.id.til_order_notes);
         bGoToPaymentMethods = (Button) v.findViewById(R.id.b_go_to_payment_methods);
 
         return v;
@@ -57,10 +65,55 @@ public class BillingDetailsFragment extends Fragment implements View.OnClickList
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        setTypefaceForViews();
+
         checkoutActivity = (CheckoutActivity) getActivity();
+
+        userSharedPrefs = getActivity().getSharedPreferences("USER_DETAILS",
+                Context.MODE_PRIVATE);
+        // editor = userSharedPrefs.edit();
+
+     //   tilFirstName.getEditText().setText(userSharedPrefs.getString("fname", ""));
+
+        if (userSharedPrefs.getBoolean("available", false)) {
+
+            populateFields();
+            customerId = userSharedPrefs.getInt("customerId", 0);
+
+        }
 
         bGoToPaymentMethods.setOnClickListener(this);
 
+
+    }
+
+    private void setTypefaceForViews() {
+
+        tilOrderNotes.setTypeface(myApplicationClass.getBoldTypeface());
+        tilOrderNotes.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
+
+        tilFirstName.setTypeface(myApplicationClass.getBoldTypeface());
+        tilFirstName.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
+
+        tilSurName.setTypeface(myApplicationClass.getBoldTypeface());
+        tilSurName.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
+
+        tilEmail.setTypeface(myApplicationClass.getBoldTypeface());
+        tilEmail.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
+
+        tilPhoneNumber.setTypeface(myApplicationClass.getBoldTypeface());
+        tilPhoneNumber.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
+
+        tilDeliveryAddress.setTypeface(myApplicationClass.getBoldTypeface());
+        tilDeliveryAddress.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
+
+        tilPassword.setTypeface(myApplicationClass.getBoldTypeface());
+        tilPassword.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
+
+        tilTownCity.setTypeface(myApplicationClass.getBoldTypeface());
+        tilTownCity.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
+
+        bGoToPaymentMethods.setTypeface(myApplicationClass.getBoldTypeface());
 
     }
 
@@ -70,12 +123,15 @@ public class BillingDetailsFragment extends Fragment implements View.OnClickList
 
         checkoutActivity.setActionBarSubtitle("Billing Details");
 
+
+
         tilFirstName.getEditText().setText(myApplicationClass.getBillingDetails().getFirstName());
         tilSurName.getEditText().setText(myApplicationClass.getBillingDetails().getSurname());
         tilDeliveryAddress.getEditText().setText(myApplicationClass.getBillingDetails().getDeliveryAddress());
         tilEmail.getEditText().setText(myApplicationClass.getBillingDetails().getEmailAddress());
         tilPhoneNumber.getEditText().setText(myApplicationClass.getBillingDetails().getPhoneNumber());
         tilTownCity.getEditText().setText(myApplicationClass.getBillingDetails().getTownCity());
+        tilOrderNotes.getEditText().setText(myApplicationClass.getBillingDetails().getOrderNotes());
 
     }
 
@@ -94,15 +150,12 @@ public class BillingDetailsFragment extends Fragment implements View.OnClickList
                 mBillingDetails.setEmailAddress(tilEmail.getEditText().getText().toString());
                 mBillingDetails.setPhoneNumber(tilPhoneNumber.getEditText().getText().toString());
                 mBillingDetails.setTownCity(tilTownCity.getEditText().getText().toString());
+                mBillingDetails.setOrderNotes(tilOrderNotes.getEditText().getText().toString());
 
                 myApplicationClass.setBillingDetails(mBillingDetails);
 
 
                 checkoutActivity.showPaymentMethods();
-
-            } else {
-
-                //if billing details are not complete
 
             }
 
@@ -161,5 +214,23 @@ public class BillingDetailsFragment extends Fragment implements View.OnClickList
 
 
         return true;
+    }
+
+    public void populateFields() {
+
+        String fname = userSharedPrefs.getString("fname", "");
+        String lname = userSharedPrefs.getString("lname", "");
+        String email = userSharedPrefs.getString("email", "");
+
+        myApplicationClass.getBillingDetails().setFirstName(fname);
+        myApplicationClass.getBillingDetails().setSurname(lname);
+        myApplicationClass.getBillingDetails().setEmailAddress(email);
+
+     //   tilFirstName.getEditText().setText(fname);
+     //   tilSurName.getEditText().setText(lname);
+     //   tilEmail.getEditText().setText(email);
+
+
+
     }
 }

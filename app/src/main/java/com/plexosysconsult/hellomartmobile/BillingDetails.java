@@ -6,7 +6,21 @@ package com.plexosysconsult.hellomartmobile;
 
 public class BillingDetails {
 
-    String firstName, surname, emailAddress, phoneNumber, deliveryAddress, townCity;
+    String firstName;
+    String surname;
+    String emailAddress;
+    String phoneNumber;
+    String deliveryAddress;
+    String townCity;
+    String orderNotes;
+
+    public String getOrderNotes() {
+        return orderNotes;
+    }
+
+    public void setOrderNotes(String orderNotes) {
+        this.orderNotes = orderNotes;
+    }
 
     public String getFirstName() {
         return firstName;

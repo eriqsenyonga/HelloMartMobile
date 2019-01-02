@@ -52,6 +52,7 @@
         android:layout_marginBottom="8dp">
 
         <TextView
+            android:id="@+id/tv_label_amount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -82,6 +83,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
             android:text="CANCEL"
+            android:textColor="@color/white"
             android:layout_weight="1"/>
 
 
@@ -94,6 +96,7 @@
             android:layout_marginLeft="2dp"
             android:background="@color/colorAccent"
             android:text="SAVE"
+            android:textColor="@color/white"
             android:layout_weight="1"/>
 
 

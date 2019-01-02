@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_shop"
-            android:icon="@drawable/ic_action_shopping_basket"
+            android:icon="@drawable/ic_home"
             android:title="@string/shop" />
         <item
             android:id="@+id/nav_categories"
@@ -15,7 +16,18 @@
         <item
             android:id="@+id/nav_cart"
             android:icon="@drawable/ic_action_shopping_cart"
-            android:title="Cart" />
+            android:title="@string/cart"
+            app:actionViewClass="android.widget.TextView" />
+
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_local_shipping"
+            android:title="@string/my_orders" />
+
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_person"
+            android:title="@string/my_account" />
 
 
         <!--       <item
@@ -42,6 +54,18 @@
 
 
                  -->
+
+        <item
+            android:id="@+id/nav_invite"
+
+            android:title="@string/invite" />
+
+        <item
+            android:id="@+id/nav_help"
+
+            android:title="@string/help" />
+
+
         <item
             android:id="@+id/nav_about"
 

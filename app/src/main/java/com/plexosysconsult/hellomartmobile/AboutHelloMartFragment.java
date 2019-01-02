@@ -67,7 +67,7 @@ public class AboutHelloMartFragment extends Fragment {
 
         View aboutPage = new AboutPage(getActivity())
                 .isRTL(false).setDescription(getString(R.string.about_hellomart))
-                .setImage(R.drawable.hm_logo)
+                .setImage(R.drawable.logo_coloured)
                 //       .addItem(versionElement)
                 //      .addItem(adsElement)
                 .addGroup("Connect with us")

@@ -2,12 +2,19 @@ package com.plexosysconsult.hellomartmobile;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +25,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 
 import java.util.ArrayList;
@@ -60,6 +70,8 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
 
             isMainActivityContext = true;
             mainActivity = (MainActivity) context;
+
+
         } else {
             isMainActivityContext = false;
         }
@@ -67,6 +79,7 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
         bigDecimalClass = new BigDecimalClass(context);
 
         items = new ArrayList();
+
 
 
         // items = itemsToShow;
@@ -104,7 +117,7 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
     private RecyclerView.ViewHolder getViewHolder(ViewGroup parent, LayoutInflater inflater) {
         RecyclerView.ViewHolder viewHolder;
         View v1 = inflater.inflate(R.layout.list_item, parent, false);
-        viewHolder = new ItemViewHolder(v1);
+        viewHolder = new ItemViewHolder(v1, context);
         return viewHolder;
     }
 
@@ -127,21 +140,20 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
             Glide
                     .with(context)
                     .load(veggie.getImageUrl())
-                    .centerCrop()
-                    //      .placeholder(R.drawable.placeholder_veggie)
-                    .crossFade()
-                    .listener(new RequestListener<String, GlideDrawable>() {
+                    .apply(new RequestOptions().centerCrop())
+                    .transition(new DrawableTransitionOptions().crossFade())
+                    .listener(new RequestListener<Drawable>() {
                         @Override
-                        public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-                            itemViewHolder.loading.setVisibility(View.GONE);
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
                             return false;
                         }
 
                         @Override
-                        public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                            itemViewHolder.loading.setVisibility(View.GONE);
+                        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
                             return false;
                         }
+
+
                     })
                     .into(itemViewHolder.ivItemImage);
 
@@ -159,19 +171,47 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
 
                                                     View addToCartDialog = inflater.inflate(R.layout.dialog_add_item_to_cart_details, null);
 
+                                                    TextView tvLabelAmount =  addToCartDialog.findViewById(R.id.tv_label_amount);
+                                                    TextView tvCartItemName =  addToCartDialog.findViewById(R.id.tv_item_name);
+                                                    TextView tvLabelOptions = addToCartDialog.findViewById(R.id.tv_label_options);
+                                                    final Spinner spnVariations =  addToCartDialog.findViewById(R.id.spn_variations);
 
-                                                    TextView tvCartItemName = (TextView) addToCartDialog.findViewById(R.id.tv_item_name);
-                                                    TextView tvLabelOptions = (TextView) addToCartDialog.findViewById(R.id.tv_label_options);
-                                                    final Spinner spnVariations = (Spinner) addToCartDialog.findViewById(R.id.spn_variations);
+                                                    final TextView tvCartItemPrice =  addToCartDialog.findViewById(R.id.tv_item_unit_price);
+                                                    final TextView tvAmount =  addToCartDialog.findViewById(R.id.tv_amount);
+                                                    final TextInputLayout tilQuantity =  addToCartDialog.findViewById(R.id.til_quantity);
+                                                    FloatingActionButton fabAddToCart =  addToCartDialog.findViewById(R.id.fab_add_to_cart);
+                                                    ImageView ivItemImage = addToCartDialog.findViewById(R.id.iv_item_image);
 
-                                                    final TextView tvCartItemPrice = (TextView) addToCartDialog.findViewById(R.id.tv_item_unit_price);
-                                                    final TextView tvAmount = (TextView) addToCartDialog.findViewById(R.id.tv_amount);
-                                                    final TextInputLayout tilQuantity = (TextInputLayout) addToCartDialog.findViewById(R.id.til_quantity);
-                                                    FloatingActionButton fabAddToCart = (FloatingActionButton) addToCartDialog.findViewById(R.id.fab_add_to_cart);
+                                                    tvLabelAmount.setTypeface(myApplicationClass.getRegularTypeface());
+                                                    tvCartItemName.setTypeface(myApplicationClass.getBoldTypeface());
+                                                    tvLabelOptions.setTypeface(myApplicationClass.getBoldTypeface());
+                                                    tvCartItemPrice.setTypeface(myApplicationClass.getRegularTypeface());
+                                                    tvAmount.setTypeface(myApplicationClass.getRegularTypeface());
+                                                    tilQuantity.setTypeface(myApplicationClass.getBoldTypeface());
+                                                    tilQuantity.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
 
 
                                                     tvCartItemName.setText(items.get(position).getItemName());
                                                     tvCartItemPrice.setText(items.get(position).getItemPrice());
+                                                    Glide
+                                                            .with(context)
+                                                            .load(items.get(position).getImageUrl())
+                                                            .apply(new RequestOptions().centerCrop())
+                                                            .transition(new DrawableTransitionOptions().crossFade())
+                                                            .listener(new RequestListener<Drawable>() {
+                                                                @Override
+                                                                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                                                    return false;
+                                                                }
+
+                                                                @Override
+                                                                public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                                                    return false;
+                                                                }
+
+
+                                                            })
+                                                            .into(ivItemImage);
 
 
                                                     if (items.get(position).getItemShortDescription().contains("Kilogram")) {
@@ -313,6 +353,7 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
 
                                                                 if (isMainActivityContext) {
                                                                     mainActivity.checkCartForItems();
+                                                                    mainActivity.updateCartCount();
                                                                 }
 
                                                                 d.dismiss();
@@ -406,14 +447,21 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
         ImageView ivItemImage;
         ItemClickListener itemClickListener;
         ProgressBar loading;
+        Typeface productSansBold, productSansRegular;
 
-        public ItemViewHolder(View itemView) {
+        public ItemViewHolder(View itemView, Context c) {
             super(itemView);
 
             tvItemName = (TextView) itemView.findViewById(R.id.tv_item_name);
             tvItemPrice = (TextView) itemView.findViewById(R.id.tv_item_price);
             ivItemImage = (ImageView) itemView.findViewById(R.id.iv_item_image);
             loading = (ProgressBar) itemView.findViewById(R.id.pb_loading);
+
+            productSansBold = Typeface.createFromAsset(c.getAssets(), "fonts/ProductSansBold.ttf");
+            productSansRegular = Typeface.createFromAsset(c.getAssets(), "fonts/ProductSansRegular.ttf");
+
+            tvItemName.setTypeface(productSansBold);
+            tvItemPrice.setTypeface(productSansRegular);
 
             itemView.setOnClickListener(this);
         }

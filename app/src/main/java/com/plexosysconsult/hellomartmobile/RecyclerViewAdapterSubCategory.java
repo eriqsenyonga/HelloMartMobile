@@ -74,13 +74,17 @@ public class RecyclerViewAdapterSubCategory extends RecyclerView.Adapter<Recycle
 
         TextView tvName, tvCount;
         ItemClickListener itemClickListener;
+        MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
 
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            tvName = (TextView) itemView.findViewById(R.id.tv_name);
-            tvCount = (TextView) itemView.findViewById(R.id.tv_count);
+            tvName = itemView.findViewById(R.id.tv_name);
+            tvCount = itemView.findViewById(R.id.tv_count);
+
+            tvName.setTypeface(myApplicationClass.getRegularTypeface());
+            tvCount.setTypeface(myApplicationClass.getRegularTypeface());
 
             itemView.setOnClickListener(this);
 

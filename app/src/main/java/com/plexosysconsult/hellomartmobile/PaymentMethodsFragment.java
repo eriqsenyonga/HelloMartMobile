@@ -3,8 +3,10 @@ package com.plexosysconsult.hellomartmobile;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NoConnectionError;
@@ -53,6 +56,11 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
     String KEY_PESAPAL = "pesapal";
     BillingDetails billingDetails;
     String paymentMethod = KEY_COD;
+    TextView tvPesapalDescription;
+    SharedPreferences userSharedPrefs;
+
+
+    int customerId = 0;
 
     public PaymentMethodsFragment() {
         // Required empty public constructor
@@ -67,6 +75,7 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
         rbCOD = (RadioButton) v.findViewById(R.id.rb_cod);
         rbPesapal = (RadioButton) v.findViewById(R.id.rb_pesapal);
         bPlaceOrder = (Button) v.findViewById(R.id.b_place_order);
+        tvPesapalDescription = v.findViewById(R.id.tv_description_pesapal);
 
 
         return v;
@@ -76,6 +85,21 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        rbCOD.setTypeface(myApplicationClass.getBoldTypeface());
+        bPlaceOrder.setTypeface(myApplicationClass.getBoldTypeface());
+        rbPesapal.setTypeface(myApplicationClass.getBoldTypeface());
+        tvPesapalDescription.setTypeface(myApplicationClass.getRegularTypeface());
+
+        userSharedPrefs = getActivity().getSharedPreferences("USER_DETAILS",
+                Context.MODE_PRIVATE);
+        // editor = userSharedPrefs.edit();
+
+        if (userSharedPrefs.getBoolean("available", false)) {
+
+            customerId = userSharedPrefs.getInt("customerId", 0);
+
+        }
 
         checkoutActivity = (CheckoutActivity) getActivity();
         progressDialog = new ProgressDialog(getActivity());
@@ -112,10 +136,8 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
 
         if (view == rbPesapal) {
 
-
             bPlaceOrder.setText("Pay Online");
             paymentMethod = KEY_PESAPAL;
-
 
         }
 
@@ -280,7 +302,7 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
 
                         try {
 
-                            Log.d("COD ORDER", response);
+                            //Log.d("COD ORDER", response);
 
                             JSONObject jsonResponse = new JSONObject(response);
 
@@ -354,6 +376,8 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
                 map.put("order_details_json_string", orderObject.toString());
+                map.put("customer_id", "" + customerId);
+                map.put("order_notes", myApplicationClass.getBillingDetails().getOrderNotes());
 
                 return map;
             }
@@ -471,6 +495,8 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
                 map.put("order_details_json_string", orderObject.toString());
+                map.put("customer_id", "" + customerId);
+                map.put("order_notes", myApplicationClass.getBillingDetails().getOrderNotes());
 
                 return map;
             }

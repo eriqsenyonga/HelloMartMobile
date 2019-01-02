@@ -1,42 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp">
+
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#dbffffff"
     android:orientation="horizontal"
-    android:padding="4dp"
-    android:layout_marginBottom="2dp"
-    android:background="#dbffffff">
+    android:padding="4dp">
 
-    <android.support.v7.widget.CardView
+   <!-- <android.support.v7.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_margin="2dp">
-
+-->
         <ImageView
             android:id="@+id/iv_cart_item_image"
             android:layout_width="96dp"
             android:layout_height="match_parent"
-            android:src="@drawable/apple"
-            android:padding="2dp"/>
-   </android.support.v7.widget.CardView>
+            android:padding="2dp"
+            android:src="@drawable/apple" />
+   <!-- </android.support.v7.widget.CardView>-->
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="8dp"
-        android:background="#dbffffff">
+        android:background="#dbffffff"
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/tv_product"
             style="@style/Base.TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grapes (Bunch) and some other shi"
-            android:textStyle="bold"
+            android:ellipsize="end"
             android:maxLines="1"
-            android:ellipsize="end"/>
+            android:text="Grapes (Bunch) and some other shi"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_label_qty"
@@ -46,8 +55,7 @@
             android:layout_below="@id/tv_product"
             android:layout_marginTop="4dp"
             android:gravity="center_horizontal"
-            android:text="Qty. "
-         />
+            android:text="Qty. " />
 
 
         <TextView
@@ -70,11 +78,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_quantity"
             android:gravity="right"
-
             android:text="UGX 16,0000"
+            android:textColor="@color/black"
             android:textStyle="bold"
 
             />
 
     </RelativeLayout>
-</LinearLayout>
+</LinearLayout></android.support.v7.widget.CardView>

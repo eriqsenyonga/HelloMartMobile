@@ -2,7 +2,6 @@ package com.plexosysconsult.hellomartmobile;
 
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.SearchView;
+import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -31,8 +32,14 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     SharedPreferences mPositionSavedPrefs;
     SharedPreferences.Editor posSavedEditor;
+    View navigationHeader;
+    TextView tvClientName;
+    TextView tvClientEmail;
+    ImageView ivClientProfilePic;
     ImageView redDot;
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
+    SharedPreferences userSharedPrefs;
+    TextView tvCartCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,25 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        navigationHeader = navigationView.getHeaderView(0);
+        ivClientProfilePic = (ImageView) navigationHeader.findViewById(R.id.iv_client_profile_pic);
+        tvClientName = (TextView) navigationHeader.findViewById(R.id.tv_display_name);
+        tvClientEmail = (TextView) navigationHeader.findViewById(R.id.tv_email);
+        tvCartCount = (TextView) navigationView.getMenu().findItem(R.id.nav_cart).getActionView();
+
+
+        tvCartCount.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        tvCartCount.setGravity(Gravity.CENTER_VERTICAL);
+        tvCartCount.setTypeface(myApplicationClass.getBoldTypeface());
+
+        tvClientName.setTypeface(myApplicationClass.getBoldTypeface());
+        tvClientEmail.setTypeface(myApplicationClass.getRegularTypeface());
+
+        updateCartCount();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -55,16 +81,33 @@ public class MainActivity extends AppCompatActivity
                 Context.MODE_PRIVATE);
         posSavedEditor = mPositionSavedPrefs.edit();
 
+        userSharedPrefs = getSharedPreferences("USER_DETAILS",
+                Context.MODE_PRIVATE);
+        // editor = userSharedPrefs.edit();
+
+        if (userSharedPrefs.getBoolean("available", false)) {
+
+            String fname = userSharedPrefs.getString("fname", "");
+            String lname = userSharedPrefs.getString("lname", "");
+            String email = userSharedPrefs.getString("email", "");
+
+
+            tvClientName.setText("Welcome " + fname);
+            tvClientEmail.setText(email);
+        } else {
+
+            tvClientName.setText("Welcome Guest");
+            tvClientEmail.setText("iShop@hellomart.ug");
+
+        }
+
         fm = getSupportFragmentManager();
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
         if (getIntent().hasExtra("beginning")) {
 
@@ -101,9 +144,9 @@ public class MainActivity extends AppCompatActivity
                 title = "Categories";
             }
 
-            /*
 
-            if (id == R.id.nav_my_account) {
+
+            if (id == R.id.nav_account) {
                 fragment = new MyAccountFragment();
                 title = "My Account";
 
@@ -114,7 +157,7 @@ public class MainActivity extends AppCompatActivity
                 title = "Orders";
             }
 
-            */
+
 
             if (fragment != null) {
 
@@ -177,6 +220,12 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        updateCartCount();
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -199,8 +248,8 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        /*
-        else if (id == R.id.nav_my_account) {
+
+        else if (id == R.id.nav_account) {
 
             fragment = new MyAccountFragment();
 
@@ -208,11 +257,12 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new OrdersFragment();
 
-        } else if (id == R.id.nav_settings) {
-
         }
+        /*else if (id == R.id.nav_settings) {
 
-        */
+        }*/
+
+
         else if (id == R.id.nav_about) {
 
             fragment = new AboutUsFragment();
@@ -319,6 +369,15 @@ public class MainActivity extends AppCompatActivity
 
             openCart();
         }
+
+    }
+
+    public void updateCartCount() {
+
+        int count = myApplicationClass.getCart().getCurrentCartItems().size();
+
+        tvCartCount.setText("" + count);
+
 
     }
 

@@ -15,12 +15,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <include layout="@layout/loading_spinner" />
+
             <ImageView
                 android:id="@+id/iv_item_image"
                 android:layout_width="match_parent"
                 android:layout_height="160dp" />
 
-            <include layout="@layout/loading_spinner" />
+
 
         </FrameLayout>
 
@@ -30,10 +32,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Baby Spinach"
-            android:textAlignment="center"
+            android:textColor="#000000"
+            android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceSmall"
-
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:paddingRight="2dp"
+            android:paddingLeft="2dp"
+            android:breakStrategy="simple"/>
 
         <TextView
             android:id="@+id/tv_item_price"
@@ -41,7 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="UGX 3,000"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:paddingRight="2dp"
+            android:paddingLeft="2dp"/>
 
     </LinearLayout>
 </android.support.v7.widget.CardView>

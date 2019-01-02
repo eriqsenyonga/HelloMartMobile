@@ -50,7 +50,22 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity android:name=".OrderSuccessActivity" />
-        <activity android:name=".CheckoutActivity"></activity>
+        <activity
+            android:name=".CheckoutActivity"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.plexosysconsult.hellomartmobile.MainActivity" />
+
+        </activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".OrderDetailsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.plexosysconsult.hellomartmobile.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

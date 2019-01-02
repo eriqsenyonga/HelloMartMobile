@@ -2,6 +2,8 @@ package com.plexosysconsult.hellomartmobile;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
@@ -15,8 +17,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 
 import java.util.ArrayList;
@@ -96,21 +101,20 @@ public class RecyclerViewAdapterCart extends RecyclerView.Adapter<RecyclerView.V
             Glide
                     .with(context)
                     .load(cartItem.getItemImageUrl())
-                    .centerCrop()
-                    //      .placeholder(R.drawable.placeholder_veggie)
-                    .crossFade()
-                    .listener(new RequestListener<String, GlideDrawable>() {
+                    .apply(new RequestOptions().centerCrop())
+                    .transition(new DrawableTransitionOptions().crossFade())
+                    .listener(new RequestListener<Drawable>() {
                         @Override
-                        public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-                            //  cartItemViewHolder.loading.setVisibility(View.GONE);
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
                             return false;
                         }
 
                         @Override
-                        public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                            //  itemViewHolder.loading.setVisibility(View.GONE);
+                        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
                             return false;
                         }
+
+
                     })
                     .into(cartItemViewHolder.ivImage);
 
@@ -123,14 +127,22 @@ public class RecyclerViewAdapterCart extends RecyclerView.Adapter<RecyclerView.V
                     LayoutInflater inflater = LayoutInflater.from(context);
 
                     View addToCartDialog = inflater.inflate(R.layout.dialog_cart_item_edit, null);
-
-                    final TextView tvCartItemName = (TextView) addToCartDialog.findViewById(R.id.tv_item_name);
+                    TextView tvLabelAmount =  addToCartDialog.findViewById(R.id.tv_label_amount);
+                    final TextView tvCartItemName =  addToCartDialog.findViewById(R.id.tv_item_name);
                     final TextView tvCartItemPrice = (TextView) addToCartDialog.findViewById(R.id.tv_item_unit_price);
                     final TextView tvAmount = (TextView) addToCartDialog.findViewById(R.id.tv_amount);
                     final TextInputLayout tilQuantity = (TextInputLayout) addToCartDialog.findViewById(R.id.til_quantity);
                     final Button bSave = (Button) addToCartDialog.findViewById(R.id.b_save);
                     final Button bCancel = (Button) addToCartDialog.findViewById(R.id.b_cancel);
 
+                    tvLabelAmount.setTypeface(myApplicationClass.getRegularTypeface());
+                    tvCartItemName.setTypeface(myApplicationClass.getBoldTypeface());
+                    bSave.setTypeface(myApplicationClass.getBoldTypeface());
+                    bCancel.setTypeface(myApplicationClass.getBoldTypeface());
+                    tvCartItemPrice.setTypeface(myApplicationClass.getRegularTypeface());
+                    tvAmount.setTypeface(myApplicationClass.getRegularTypeface());
+                    tilQuantity.setTypeface(myApplicationClass.getBoldTypeface());
+                    tilQuantity.getEditText().setTypeface(myApplicationClass.getRegularTypeface());
 
                     tvCartItemName.setText(cartItem.getItemName());
                     tvCartItemPrice.setText(cartItem.getItemUnitPrice());
@@ -270,11 +282,16 @@ public class RecyclerViewAdapterCart extends RecyclerView.Adapter<RecyclerView.V
 
     public static class FooterViewHolder extends RecyclerView.ViewHolder {
         TextView tvTotalPrice;
+        TextView tvLabelSubTotal;
+        MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
 
         public FooterViewHolder(View itemView) {
             super(itemView);
 
+            tvLabelSubTotal = itemView.findViewById(R.id.tv_label_subtotal);
             tvTotalPrice = (TextView) itemView.findViewById(R.id.tv_total_price);
+            tvTotalPrice.setTypeface(myApplicationClass.getBoldTypeface());
+            tvLabelSubTotal.setTypeface(myApplicationClass.getRegularTypeface());
         }
     }
 
@@ -288,9 +305,10 @@ public class RecyclerViewAdapterCart extends RecyclerView.Adapter<RecyclerView.V
     }
 
     public static class CartItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView tvQuantity, tvProduct, tvPrice;
+        TextView tvQuantity, tvProduct, tvPrice, tvLabelQty;
         ItemClickListener itemClickListener;
         ImageView ivImage;
+        MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
 
 
         public CartItemViewHolder(View itemView) {
@@ -300,6 +318,12 @@ public class RecyclerViewAdapterCart extends RecyclerView.Adapter<RecyclerView.V
             tvProduct = (TextView) itemView.findViewById(R.id.tv_product);
             tvPrice = (TextView) itemView.findViewById(R.id.tv_price);
             ivImage = (ImageView) itemView.findViewById(R.id.iv_cart_item_image);
+            tvLabelQty = itemView.findViewById(R.id.tv_label_qty);
+
+            tvProduct.setTypeface(myApplicationClass.getBoldTypeface());
+            tvPrice.setTypeface(myApplicationClass.getRegularTypeface());
+            tvQuantity.setTypeface(myApplicationClass.getRegularTypeface());
+            tvLabelQty.setTypeface(myApplicationClass.getRegularTypeface());
 
             itemView.setOnClickListener(this);
         }

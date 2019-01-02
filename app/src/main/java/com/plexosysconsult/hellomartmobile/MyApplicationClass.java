@@ -1,6 +1,7 @@
 package com.plexosysconsult.hellomartmobile;
 
 import android.app.Application;
+import android.graphics.Typeface;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,17 +25,24 @@ public class MyApplicationClass extends Application {
     String lastSubCategory;
     Cart cart;
     BillingDetails billingDetails;
+    Typeface productSansBold, productSansRegular;
+    List<OrderLineItem> orderLineItems;
 
 
     @Override
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+
+        productSansBold = Typeface.createFromAsset(this.getAssets(), "fonts/ProductSansBold.ttf");
+        productSansRegular = Typeface.createFromAsset(this.getAssets(), "fonts/ProductSansRegular.ttf");
+
         mRequestQueue = Volley.newRequestQueue(getApplicationContext());
         categoryList = new ArrayList<>();
         subCategoryList = new ArrayList<>();
         billingDetails = new BillingDetails();
         cart = new Cart(getApplicationContext());
+        orderLineItems = new ArrayList<>();
     }
 
 
@@ -110,4 +118,23 @@ public class MyApplicationClass extends Application {
     public void setBillingDetails(BillingDetails billingDetails) {
         this.billingDetails = billingDetails;
     }
+
+    public Typeface getBoldTypeface() {
+        return productSansBold;
+    }
+
+    public Typeface getRegularTypeface() {
+        return productSansRegular;
+    }
+
+    public void setSelectedOrderLineItems(List<OrderLineItem> orderLineItems){
+
+        this.orderLineItems = orderLineItems;
+
+    }
+
+    public List<OrderLineItem> getSelectedOrderLineItems(){
+        return orderLineItems;
+    }
+
 }

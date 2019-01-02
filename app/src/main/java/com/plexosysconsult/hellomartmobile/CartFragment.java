@@ -27,7 +27,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
     LinearLayoutManager linearLayoutManager;
     Toolbar toolbar;
     Button bCheckOut, bShopNow;
-    TextView tvGrandTotal;
+    TextView tvGrandTotal, tvLabelGrandTotal, tvLabelDelivery, tvDeliveryAmount;
     TextView tvEmptyMsg;
     String testVCS;
     RecyclerViewAdapterCart adapter;
@@ -47,7 +47,10 @@ public class CartFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_cart, container, false);
-
+        tvLabelDelivery = (TextView) v.findViewById(R.id.tv_label_delivery);
+        tvDeliveryAmount = (TextView) v.findViewById(R.id.tv_delivery_amount);
+        tvGrandTotal = (TextView) v.findViewById(R.id.tv_grand_total);
+        tvLabelGrandTotal = (TextView) v.findViewById(R.id.tv_label_grand_total);
         tvGrandTotal = (TextView) v.findViewById(R.id.tv_grand_total);
         bCheckOut = (Button) v.findViewById(R.id.b_checkout);
         rvCart = (RecyclerView) v.findViewById(R.id.recycler_view);
@@ -60,6 +63,13 @@ public class CartFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        bCheckOut.setTypeface(myApplicationClass.getBoldTypeface());
+        tvGrandTotal.setTypeface(myApplicationClass.getBoldTypeface());
+        tvLabelDelivery.setTypeface(myApplicationClass.getRegularTypeface());
+        tvLabelGrandTotal.setTypeface(myApplicationClass.getRegularTypeface());
+        tvDeliveryAmount.setTypeface(myApplicationClass.getBoldTypeface());
+
 
         cart = myApplicationClass.getCart();
         mainActivity = (MainActivity) getActivity();

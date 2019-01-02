@@ -1,29 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.plexosysconsult.hellomartmobile.MyAccountFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        style="@style/Base.TextAppearance.AppCompat.Large"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="My Account" />
+  >
 
     <TextView
-        style="@style/Base.TextAppearance.AppCompat.Medium"
+        android:id="@+id/tv_label_my_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
+        android:padding="16dp"
+        android:text="My Profile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        android:text="coming soon!!" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="4dp"
+        android:padding="16dp"
+        android:text="Eric Senyonga"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="4dp"
+        android:padding="16dp"
+        android:text="senyonga@gmail.com"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/tv_not_logged_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:text="You are not logged in."
+        android:inputType="textCapSentences"
+        android:visibility="gone"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <Button
+        android:id="@+id/b_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:text="Log out"
+        android:textColor="#FFFFFF" />
+
+
 
 
 </LinearLayout>

@@ -13,29 +13,55 @@ public class PagerAdapterShop extends FragmentStatePagerAdapter {
     Context context;
     public static int SHOPADAPTER = 1;
     public static int ABOUTADAPTER = 2;
+    public static int ORDERDETAILSADAPTER = 3;
     int which;
     int tabNumber;
 
-    public PagerAdapterShop(FragmentManager fm, Context context) {
+    public PagerAdapterShop(FragmentManager fm, Context context, int whichAdapter) {
         super(fm);
 
         this.context = context;
 
-        tabNumber = 2;
+        which = whichAdapter;
+
+        if (which == SHOPADAPTER) {
+            tabNumber = 4;
+        }
+
+        if (which == ABOUTADAPTER) {
+            tabNumber = 2;
+        }
+        if (which == ORDERDETAILSADAPTER) {
+
+            tabNumber = 2;
+        }
 
     }
 
     @Override
     public Fragment getItem(int position) {
 
+        if (which == ABOUTADAPTER) {
 
-        if (position == 0) {
-            return new AboutHelloMartFragment();
-        }
-        if (position == 1) {
-            return new AboutDevFragment();
+
+            if (position == 0) {
+                return new AboutHelloMartFragment();
+            }
+            if (position == 1) {
+                return new AboutDevFragment();
+            }
         }
 
+        if (which == ORDERDETAILSADAPTER) {
+
+
+            if (position == 0) {
+                return new OrderItemsFragment();
+            }
+            if (position == 1) {
+                return new OrderInfoFragment();
+            }
+        }
 
         return null;
     }
@@ -48,12 +74,24 @@ public class PagerAdapterShop extends FragmentStatePagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
 
+        if (which == ABOUTADAPTER) {
 
-        if (position == 0) {
-            return "Hello Mart Ug";
+            if (position == 0) {
+                return "HelloMart";
+            }
+            if (position == 1) {
+                return "Developers";
+            }
         }
-        if (position == 1) {
-            return "Developers";
+
+        if (which == ORDERDETAILSADAPTER) {
+
+            if (position == 0) {
+                return "ITEMS";
+            }
+            if (position == 1) {
+                return "INFO";
+            }
         }
 
 

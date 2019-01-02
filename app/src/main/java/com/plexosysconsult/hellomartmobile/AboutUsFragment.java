@@ -47,7 +47,7 @@ public class AboutUsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        PagerAdapterShop adapterShop = new PagerAdapterShop(getChildFragmentManager(), getActivity());
+        PagerAdapterShop adapterShop = new PagerAdapterShop(getChildFragmentManager(), getActivity(), PagerAdapterShop.ABOUTADAPTER);
         viewPager.setAdapter(adapterShop);
         viewPager.setOffscreenPageLimit(2);
 

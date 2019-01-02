@@ -84,7 +84,7 @@ public class BigDecimalClass {
         NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
 
         DecimalFormatSymbols dfs = new DecimalFormatSymbols();
-        dfs.setCurrencySymbol("UGX");
+        dfs.setCurrencySymbol("UGX ");
         dfs.setGroupingSeparator(',');
         dfs.setMonetaryDecimalSeparator('.');
 
@@ -118,7 +118,7 @@ public class BigDecimalClass {
         NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
 
         DecimalFormatSymbols dfs = new DecimalFormatSymbols();
-        dfs.setCurrencySymbol("UGX");
+        dfs.setCurrencySymbol("UGX ");
         dfs.setGroupingSeparator(',');
         dfs.setMonetaryDecimalSeparator('.');
 
