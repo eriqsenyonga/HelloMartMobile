@@ -48,7 +48,7 @@ import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
  */
 public class OrdersFragment extends Fragment {
 
-    private static final String URL_GET_ORDERS = "http://www.hellomartug.com/example/getCustomerOrdersByEmail.php";
+    private static final String URL_GET_ORDERS = "http://www.hellomart.ug/example/getCustomerOrdersByEmail.php";
 //app files are stored on gari share server for security purposes
 
 

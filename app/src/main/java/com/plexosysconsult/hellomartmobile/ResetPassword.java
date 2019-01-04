@@ -38,8 +38,8 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
     LinearLayout linlayPasswords;
     TextView tvTagline, tvLabelResetPassword;
 
-    private static final String URL_GET_CUSTOMER_BY_EMAIL = "http://www.hellomartug.com/example/getCustomerByEmail.php";
-    private static final String URL_RESET_PASSWORD = "http://www.hellomartug.com/example/resetPassword.php";
+    private static final String URL_GET_CUSTOMER_BY_EMAIL = "http://www.hellomart.ug/example/getCustomerByEmail.php";
+    private static final String URL_RESET_PASSWORD = "http://www.hellomart.ug/example/resetPassword.php";
 
 
     int customerId;

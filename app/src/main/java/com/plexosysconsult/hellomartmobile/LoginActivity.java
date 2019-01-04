@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button bLogin, bRegister;
     TextView tvLabelEmail, tvLabelPassword, tvTagline, tvForgotPassword, tvLabelNotRegistered, tvContinueAsGuest, tvLabelSignIn;
     EditText etEmail, etPassword;
-    private static final String LOGIN_URL = "http://www.hellomartug.com/api/user/generate_auth_cookie/?insecure=cool";
+    private static final String LOGIN_URL = "http://www.hellomart.ug/api/user/generate_auth_cookie/?insecure=cool";
     SharedPreferences userSharedPrefs;
     SharedPreferences.Editor editor;
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();

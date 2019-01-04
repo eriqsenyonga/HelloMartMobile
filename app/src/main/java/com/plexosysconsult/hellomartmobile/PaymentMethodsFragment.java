@@ -47,8 +47,8 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
     CheckoutActivity checkoutActivity;
     Button bPlaceOrder;
     Cart cart;
-    String URL_PLACE_ORDER_COD = "http://hellomartug.com/example/placeOrder.php";
-    String URL_PLACE_ORDER_PESAPAL = "http://hellomartug.com/pesapal/placeOrderPesapal.php";
+    String URL_PLACE_ORDER_COD = "http://www.hellomart.ug/example/placeOrder.php";
+    String URL_PLACE_ORDER_PESAPAL = "http://www.hellomart.ug/pesapal/placeOrderPesapal.php";
     View v;
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
     ProgressDialog progressDialog;

@@ -43,7 +43,7 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
 
     View v;
     RecyclerView recyclerView;
-    String URL_GET_CATEGORIES = "http://hellomartug.com/example/getCategories.php";
+    String URL_GET_CATEGORIES = "http://www.hellomart.ug/example/getCategories.php";
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
     List<Category> categoryList;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -199,9 +199,8 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
                 JSONObject catJSON = categories.getJSONObject(i);
 
                 Category category = new Category(catJSON.getInt("id"), usefulFunctions.stripHtml(catJSON.getString("name")), catJSON.getInt("parent"), catJSON.getInt("count"), catJSON.getString("slug"));
-
+                category.setImageUrl(catJSON.getString("image"));
                 categoryList.add(category);
-
 
             }
 

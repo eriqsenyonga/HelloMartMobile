@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     Button bRegister;
     TextInputLayout tilFname, tilLname, tilPhone, tilEmail, tilPassword;
     EditText etFname, etLname, etPhone, etEmail, etPassword;
-    private static final String REGISTER_URL = "http://www.hellomartug.com/example/createCustomer.php";
+    private static final String REGISTER_URL = "http://www.hellomart.ug/example/createCustomer.php";
     SharedPreferences userSharedPrefs;
     SharedPreferences.Editor editor;
 

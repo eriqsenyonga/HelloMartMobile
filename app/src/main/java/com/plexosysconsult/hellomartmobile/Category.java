@@ -11,6 +11,7 @@ public class Category {
     int parentId;
     int count;
     String slug;
+    String imageUrl;
 
 
     public Category(int id, String name, int parentId, int count, String slug) {
@@ -24,6 +25,13 @@ public class Category {
 
     }
 
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
     public int getId() {
         return id;

@@ -53,13 +53,13 @@ public class AboutHelloMartFragment extends Fragment {
 
         Element callElement = new Element();
         callElement.setTitle("Call Us");
-        callElement.setValue("0704807790");
+        callElement.setValue("0702157270");
         callElement.setIconDrawable(R.drawable.ic_call_black_24dp);
         callElement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:0704807790"));
+                intent.setData(Uri.parse("tel:0702157270"));
                 startActivity(intent);
             }
         });
@@ -71,8 +71,8 @@ public class AboutHelloMartFragment extends Fragment {
                 //       .addItem(versionElement)
                 //      .addItem(adsElement)
                 .addGroup("Connect with us")
-                .addEmail("hellomartug@gmail.com")
-                .addWebsite("http://hellomartug.com")
+                .addEmail("groceries@hellomart.ug")
+                .addWebsite("http://hellomart.ug")
                 .addItem(callElement)
                 .addFacebook("hellomartug")
                 //        .addTwitter("medyo80")
