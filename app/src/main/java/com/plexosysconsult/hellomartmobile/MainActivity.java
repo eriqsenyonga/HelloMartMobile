@@ -2,6 +2,7 @@ package com.plexosysconsult.hellomartmobile;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity
 
         if (getIntent().hasExtra("beginning")) {
 
-            fm.beginTransaction().replace(R.id.contentMain, new ShopFragment()).commit();
+            fm.beginTransaction().replace(R.id.contentMain, new HomeFragment()).commit();
             drawer.openDrawer(GravityCompat.START);
             posSavedEditor.putInt("last_main_position", R.id.nav_shop).apply();
             getSupportActionBar().setTitle("Shop");
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity
 
 
             if (id == R.id.nav_shop) {
-                fragment = new ShopFragment();
+                fragment = new HomeFragment();
                 title = "Shop";
             }
 
@@ -145,7 +146,6 @@ public class MainActivity extends AppCompatActivity
             }
 
 
-
             if (id == R.id.nav_account) {
                 fragment = new MyAccountFragment();
                 title = "My Account";
@@ -156,7 +156,6 @@ public class MainActivity extends AppCompatActivity
                 fragment = new OrdersFragment();
                 title = "Orders";
             }
-
 
 
             if (fragment != null) {
@@ -233,10 +232,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
 
+        if (id == R.id.nav_help) {
+
+
+        }
 
         if (id == R.id.nav_shop) {
 
-            fragment = new ShopFragment();
+            fragment = new HomeFragment();
 
         } else if (id == R.id.nav_categories) {
 
@@ -246,10 +249,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new CartFragment();
 
-        }
-
-
-        else if (id == R.id.nav_account) {
+        } else if (id == R.id.nav_account) {
 
             fragment = new MyAccountFragment();
 
@@ -336,7 +336,7 @@ public class MainActivity extends AppCompatActivity
 
     public void showShopFragment() {
 
-        fm.beginTransaction().replace(R.id.contentMain, new ShopFragment()).commit();
+        fm.beginTransaction().replace(R.id.contentMain, new HomeFragment()).commit();
         getSupportActionBar().setTitle(R.string.shop);
         getSupportActionBar().setSubtitle("");
         setNavigationViewCheckedItem(R.id.nav_shop);

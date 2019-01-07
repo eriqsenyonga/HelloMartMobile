@@ -7,6 +7,8 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
@@ -16,25 +18,29 @@ import java.util.List;
 public class OrderDetailsActivity extends AppCompatActivity {
 
     List<OrderLineItem> orderLineItems;
-    TabLayout tabs;
-    ViewPager viewPager;
-    TextView tvOrderNumber, tvOrderAmount, tvOrderDate, tvOrderStatus, tvOrderNumberOfItems, tvOrderTime;
+
+
+    TextView tvOrderNumber, tvOrderAmount, tvOrderDate, tvOrderStatus, tvOrderNumberOfItems, tvOrderTime, tvLabelDeliveryDetails,
+            tvAddress1, tvAddress2, tvDeliveryFee;
     Toolbar toolbar;
-    CollapsingToolbarLayout collapseToolbar;
     Intent i;
     Order order;
     BigDecimalClass bigDecimalClass;
     ConversionClass mCC;
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
+    RecyclerView recyclerView;
+    RecylerViewAdapterOrderSummaryLineItems adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_details);
 
-        collapseToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
-        tabs = (TabLayout) findViewById(R.id.tabs);
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        tvAddress1 = findViewById(R.id.tv_address_1);
+        tvAddress2 = findViewById(R.id.tv_address_2);
+        tvDeliveryFee = findViewById(R.id.tv_delivery_fee);
+        tvLabelDeliveryDetails = findViewById(R.id.tv_label_delivery_details);
+        recyclerView = findViewById(R.id.recycler_view);
         tvOrderNumber = (TextView) findViewById(R.id.tv_order_number);
         tvOrderAmount = (TextView) findViewById(R.id.tv_order_amount);
         tvOrderDate = (TextView) findViewById(R.id.tv_order_date);
@@ -42,6 +48,11 @@ public class OrderDetailsActivity extends AppCompatActivity {
         tvOrderStatus = (TextView) findViewById(R.id.tv_order_status);
         tvOrderNumberOfItems = (TextView) findViewById(R.id.tv_number_of_items);
 
+
+        tvAddress1.setTypeface(myApplicationClass.getRegularTypeface());
+        tvAddress2.setTypeface(myApplicationClass.getRegularTypeface());
+        tvDeliveryFee.setTypeface(myApplicationClass.getRegularTypeface());
+        tvLabelDeliveryDetails.setTypeface(myApplicationClass.getBoldTypeface());
         tvOrderNumber.setTypeface(myApplicationClass.getBoldTypeface());
         tvOrderAmount.setTypeface(myApplicationClass.getRegularTypeface());
         tvOrderDate.setTypeface(myApplicationClass.getRegularTypeface());
@@ -51,59 +62,36 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Order Details");
 
         orderLineItems = new ArrayList<>();
 
         i = getIntent();
-       // i.setExtrasClassLoader(OrderLineItem.class.getClassLoader());
-       order = (Order) i.getParcelableExtra("order");
-      //  orderLineItems = order.getLineItems();
 
-     //   Log.d("Order Line Items", "" + orderLineItems.size());
-
+        order = (Order) i.getParcelableExtra("order");
 
         bigDecimalClass = new BigDecimalClass(OrderDetailsActivity.this);
         mCC = new ConversionClass(OrderDetailsActivity.this);
 
+        recyclerView.hasFixedSize();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
-        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                if (Math.abs(verticalOffset) == appBarLayout.getTotalScrollRange()) {
-                    // Collapsed (make button visible and fab invisible)
-                    collapseToolbar.setTitle("Order #" + order.getOrderId());
-                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                    getSupportActionBar().setDisplayShowHomeEnabled(true);
+        adapter = new RecylerViewAdapterOrderSummaryLineItems(this, order.getLineItems());
+        recyclerView.setAdapter(adapter);
 
-                } else if (verticalOffset == 0) {
-                    // Expanded (make fab visible and toolbar button invisible)
-                    collapseToolbar.setTitle(" ");
-                    getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-                    getSupportActionBar().setDisplayShowHomeEnabled(false);
+        if (order.getStatus().equalsIgnoreCase("cancelled")) {
+            tvOrderStatus.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+        }
 
-                } else {
-                    // Somewhere in between
-                    collapseToolbar.setTitle(" ");
-                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                    getSupportActionBar().setDisplayShowHomeEnabled(true);
-                    collapseToolbar.setTitle("Order #" + order.getOrderId());
+        if (order.getStatus().equalsIgnoreCase("processing")) {
+            tvOrderStatus.setTextColor(getResources().getColor(R.color.colorPrimary));
+        }
 
 
-                }
-            }
-        });
-
-
-        //    collapseToolbar.setCollapsedTitleTextColor("#FFFFFF");
-
-
-        PagerAdapterShop adapterOrderDetails = new PagerAdapterShop(getSupportFragmentManager(), this, PagerAdapterShop.ORDERDETAILSADAPTER);
-        viewPager.setAdapter(adapterOrderDetails);
-
-        tabs.setupWithViewPager(viewPager);
-
+        if (order.getStatus().equalsIgnoreCase("on-hold")) {
+            tvOrderStatus.setTextColor(getResources().getColor(R.color.black));
+        }
 
         tvOrderNumber.setText("Order #" + order.getOrderId());
         tvOrderDate.setText(mCC.formatDateForDisplayInOrders(order.getDateCreated()));
@@ -111,6 +99,9 @@ public class OrderDetailsActivity extends AppCompatActivity {
         tvOrderNumberOfItems.setText(order.getNumberOfItems() + " items");
         tvOrderStatus.setText(order.getStatus());
         tvOrderAmount.setText(bigDecimalClass.convertStringToDisplayCurrencyString(order.getTotalAmount()));
+        tvDeliveryFee.setText(bigDecimalClass.convertStringToDisplayCurrencyString(order.getDeliveryCharge()) + " (Delivery Fee)");
+        tvAddress1.setText(order.getAddressLine1());
+        tvAddress2.setText(order.getAddressLine2() + " " + order.getCity());
 
     }
 
@@ -121,7 +112,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         return orderLineItems;
     }
 
-    public Order getOrder(){
-        return  order;
+    public Order getOrder() {
+        return order;
     }
 }

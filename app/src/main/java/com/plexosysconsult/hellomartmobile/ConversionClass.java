@@ -62,6 +62,8 @@ public class ConversionClass {
         try {
             unformattedNew = serverDateFormat.parse(serverDate);
 
+
+
             returnDateString = outputFormatDate.format(unformattedNew);
 
             return returnDateString;
@@ -87,6 +89,11 @@ public class ConversionClass {
         Date unformattedNew;
         try {
             unformattedNew = serverDateFormat.parse(serverDate);
+
+            Calendar c = Calendar.getInstance();
+            c.setTime(unformattedNew);
+            c.add(Calendar.HOUR, 3); //adding 3 hours to the date since it comes 3hours early
+            unformattedNew = c.getTime();
 
             returnDateString = outputFormatTime.format(unformattedNew);
 

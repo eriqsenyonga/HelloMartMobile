@@ -46,7 +46,6 @@ public class OrderItemsFragment extends Fragment {
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
         recyclerView.setAdapter(new RecyclerViewAdapterOrderItems(getActivity(), myApplicationClass.getSelectedOrderLineItems()));
 
 

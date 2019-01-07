@@ -174,6 +174,18 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
 
             fetchItemsJson();
 
+        }else{
+
+            queryString = intent.getStringExtra("queryString");
+            //use the query to search your data somehow
+
+            //  Toast.makeText(this, "Search: " + queryString, Toast.LENGTH_LONG).show();
+
+            getSupportActionBar().setTitle("Search: " + queryString);
+
+            fetchItemsJson();
+
+
         }
     }
 

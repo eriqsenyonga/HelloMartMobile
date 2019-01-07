@@ -127,8 +127,8 @@ public class RecyclerViewAdapterCart extends RecyclerView.Adapter<RecyclerView.V
                     LayoutInflater inflater = LayoutInflater.from(context);
 
                     View addToCartDialog = inflater.inflate(R.layout.dialog_cart_item_edit, null);
-                    TextView tvLabelAmount =  addToCartDialog.findViewById(R.id.tv_label_amount);
-                    final TextView tvCartItemName =  addToCartDialog.findViewById(R.id.tv_item_name);
+                    TextView tvLabelAmount = addToCartDialog.findViewById(R.id.tv_label_amount);
+                    final TextView tvCartItemName = addToCartDialog.findViewById(R.id.tv_item_name);
                     final TextView tvCartItemPrice = (TextView) addToCartDialog.findViewById(R.id.tv_item_unit_price);
                     final TextView tvAmount = (TextView) addToCartDialog.findViewById(R.id.tv_amount);
                     final TextInputLayout tilQuantity = (TextInputLayout) addToCartDialog.findViewById(R.id.til_quantity);
@@ -169,9 +169,7 @@ public class RecyclerViewAdapterCart extends RecyclerView.Adapter<RecyclerView.V
                                 tvAmount.setText(bigDecimalClass.convertLongToDisplayCurrencyString((bigDecimalClass.multiplyParameters(tvCartItemPrice.getText().toString(), tilQuantity.getEditText().getText().toString()))));
                             }
 
-
                         }
-
 
                     });
 

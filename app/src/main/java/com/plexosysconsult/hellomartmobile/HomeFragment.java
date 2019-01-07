@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NoConnectionError;
@@ -39,9 +38,8 @@ import java.util.Map;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CategoriesFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    View v;
     RecyclerView recyclerView;
     String URL_GET_CATEGORIES = "http://www.hellomart.ug/example/getCategories.php";
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
@@ -53,10 +51,10 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
     Button bReload;
     TextView tvErrorMsg;
     MainActivity mainActivity;
-    //  String jsonFileName = "fruits.json";
+    GridLayoutManager gridLayoutManager;
+    View v;
 
-
-    public CategoriesFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -65,12 +63,12 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_categories, container, false);
-        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
-        pbLoading = (ProgressBar) v.findViewById(R.id.pb_loading);
-        errorLayout = (LinearLayout) v.findViewById(R.id.error_layout);
-        bReload = (Button) v.findViewById(R.id.b_reload);
-        tvErrorMsg = (TextView) v.findViewById(R.id.tv_error_message);
+        v = inflater.inflate(R.layout.fragment_home, container, false);
+        recyclerView = v.findViewById(R.id.recycler_view);
+        pbLoading = v.findViewById(R.id.pb_loading);
+        errorLayout = v.findViewById(R.id.error_layout);
+        bReload = v.findViewById(R.id.b_reload);
+        tvErrorMsg = v.findViewById(R.id.tv_error_message);
         return v;
     }
 
@@ -78,16 +76,32 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-
         mainActivity = (MainActivity) getActivity();
+
 
         usefulFunctions = new UsefulFunctions(getActivity());
         pbLoading.setVisibility(View.GONE);
 
 
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.addItemDecoration(new ListDividerDecoration(getActivity()));
+
+        gridLayoutManager = new GridLayoutManager(getActivity(), 3);
+        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                switch (position) {
+                    case 0:
+                        return 3;
+
+                    default:
+                        return 1;
+                }
+            }
+        });
+
+
+        recyclerView.setLayoutManager(gridLayoutManager);
+        //  recyclerView.addItemDecoration(new ListDividerDecoration(this));
 
         categoryList = new ArrayList<>();
 
@@ -98,11 +112,10 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
 
         } else {
 
-            recyclerView.setAdapter(new RecyclerViewAdapterCategory(getActivity(), myApplicationClass.getCategoryList()));
+            recyclerView.setAdapter(new RecyclerViewAdapterHome(getActivity(), myApplicationClass.getCategoryList()));
         }
 
         bReload.setOnClickListener(this);
-
 
     }
 
@@ -211,7 +224,7 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
         }
 
         myApplicationClass.setCategoryList(categoryList);
-        recyclerView.setAdapter(new RecyclerViewAdapterCategory(getActivity(), categoryList));
+        recyclerView.setAdapter(new RecyclerViewAdapterHome(getActivity(), categoryList));
 
 
     }
@@ -225,6 +238,8 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
             errorLayout.setVisibility(View.GONE);
             pbLoading.setVisibility(View.VISIBLE);
             fetchCategoryJson();
+
+
         }
 
 
@@ -236,8 +251,8 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
         super.onResume();
 
 
-        mainActivity.removeSubtitle(getString(R.string.categories));
-        mainActivity.setNavigationViewCheckedItem(R.id.nav_categories);
+        mainActivity.removeSubtitle(getString(R.string.shop));
+        mainActivity.setNavigationViewCheckedItem(R.id.nav_shop);
 
 
     }

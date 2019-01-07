@@ -55,6 +55,24 @@ public class RecyclerViewAdapterOrders extends RecyclerView.Adapter<RecyclerView
         holder.tvOrderDate.setText(mCC.formatDateForDisplayInOrders(order.getDateCreated()));
         holder.tvOrderTime.setText(", " + mCC.formatTimeForDisplayInOrders(order.getDateCreated()));
         holder.tvOrderNumberOfItems.setText(order.getNumberOfItems() + " items");
+
+        if(order.getStatus().equalsIgnoreCase("completed")){
+            holder.tvOrderStatus.setTextColor(context.getResources().getColor(android.R.color.holo_green_dark));
+        }
+
+        if(order.getStatus().equalsIgnoreCase("cancelled")){
+            holder.tvOrderStatus.setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
+        }
+
+        if(order.getStatus().equalsIgnoreCase("processing")){
+            holder.tvOrderStatus.setTextColor(context.getResources().getColor(R.color.colorPrimary));
+        }
+
+
+        if(order.getStatus().equalsIgnoreCase("on-hold")){
+            holder.tvOrderStatus.setTextColor(context.getResources().getColor(R.color.black));
+        }
+
         holder.tvOrderStatus.setText(order.getStatus());
         holder.tvOrderAmount.setText(bigDecimalClass.convertStringToDisplayCurrencyString(order.getTotalAmount()));
 
