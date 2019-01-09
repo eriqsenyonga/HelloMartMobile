@@ -23,6 +23,7 @@ import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.facebook.appevents.AppEventsConstants;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     Button bRegister;
     TextInputLayout tilFname, tilLname, tilPhone, tilEmail, tilPassword;
     EditText etFname, etLname, etPhone, etEmail, etPassword;
-    private static final String REGISTER_URL = "http://www.hellomart.ug/example/createCustomer.php";
+    private static final String REGISTER_URL = "createCustomer.php";
     SharedPreferences userSharedPrefs;
     SharedPreferences.Editor editor;
 
@@ -119,7 +120,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void registerNewPersonWooCommerceVersion(final String fname, final String lname, final String email, String username, String password) {
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                REGISTER_URL
+                MyApplicationClass.generalUrl + REGISTER_URL
                         //  + "&nonce=" + nonce
                         + "?username=" + username
                         + "&display_name=" + fname
@@ -338,9 +339,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private void goToMainActivity() {
 
+        logCompletedRegistrationEvent("email");
         Intent i = new Intent(RegisterActivity.this, MainActivity.class);
         i.putExtra("beginning", 1);
         startActivity(i);
         finish();
+    }
+
+    public void logCompletedRegistrationEvent (String registrationMethod) {
+        Bundle params = new Bundle();
+        params.putString(AppEventsConstants.EVENT_PARAM_REGISTRATION_METHOD, registrationMethod);
+        myApplicationClass.getLogger().logEvent(AppEventsConstants.EVENT_NAME_COMPLETED_REGISTRATION, params);
     }
 }

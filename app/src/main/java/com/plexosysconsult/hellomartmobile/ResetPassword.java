@@ -38,8 +38,8 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
     LinearLayout linlayPasswords;
     TextView tvTagline, tvLabelResetPassword;
 
-    private static final String URL_GET_CUSTOMER_BY_EMAIL = "http://www.hellomart.ug/example/getCustomerByEmail.php";
-    private static final String URL_RESET_PASSWORD = "http://www.hellomart.ug/example/resetPassword.php";
+    private static final String URL_GET_CUSTOMER_BY_EMAIL = "getCustomerByEmail.php";
+    private static final String URL_RESET_PASSWORD = "resetPassword.php";
 
 
     int customerId;
@@ -122,7 +122,7 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                URL_RESET_PASSWORD,
+                MyApplicationClass.generalUrl + URL_RESET_PASSWORD,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -275,7 +275,7 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
     private void checkEmailAvailability(final String email) {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                URL_GET_CUSTOMER_BY_EMAIL,
+                MyApplicationClass.generalUrl + URL_GET_CUSTOMER_BY_EMAIL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

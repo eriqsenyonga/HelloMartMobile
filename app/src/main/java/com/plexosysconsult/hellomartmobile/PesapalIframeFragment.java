@@ -79,7 +79,7 @@ public class PesapalIframeFragment extends Fragment implements AdvancedWebView.L
         String email = billingDetails.getEmailAddress();
         String phoneNumber = billingDetails.getPhoneNumber();
 
-        aWebView.loadUrl("http://hellomartug.com/pesapal/Pesapal-iframe.php?amount=" + grandTotal
+        aWebView.loadUrl("https://hellomart.ug/pesapal/Pesapal-iframe.php?amount=" + grandTotal
                 + "&order_id=" + orderId
                 + "&first_name=" + firstName
                 + "&last_name=" + lastName

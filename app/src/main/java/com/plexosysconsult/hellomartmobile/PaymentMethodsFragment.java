@@ -28,11 +28,14 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.facebook.appevents.AppEventsConstants;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
+import java.util.Currency;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,8 +50,8 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
     CheckoutActivity checkoutActivity;
     Button bPlaceOrder;
     Cart cart;
-    String URL_PLACE_ORDER_COD = "http://www.hellomart.ug/example/placeOrder.php";
-    String URL_PLACE_ORDER_PESAPAL = "http://www.hellomart.ug/pesapal/placeOrderPesapal.php";
+    String URL_PLACE_ORDER_COD = "placeOrder.php";
+    String URL_PLACE_ORDER_PESAPAL = "https://hellomart.ug/pesapal/placeOrderPesapal.php";
     View v;
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
     ProgressDialog progressDialog;
@@ -295,7 +298,7 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
 
     private void placeOrderOnlineCOD(final JSONObject orderObject) {
 
-        StringRequest placeOrderOnlineRequest = new StringRequest(Request.Method.POST, URL_PLACE_ORDER_COD,
+        StringRequest placeOrderOnlineRequest = new StringRequest(Request.Method.POST, MyApplicationClass.generalUrl + URL_PLACE_ORDER_COD,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -419,8 +422,10 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
 
                             JSONObject jsonResponse = new JSONObject(response);
 
-
                             Long orderId = jsonResponse.getJSONObject("order").getLong("id");
+
+
+                            //  logPurchase(jsonResponse.getJSONObject("order").getString("total"));
 
                             checkoutActivity.showPesapalIframe(orderId);
 
@@ -522,6 +527,15 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
 
         myApplicationClass.add(placeOrderOnlineRequest);
 
+
+    }
+
+    public void logPurchase(String purchaseAmount) {
+
+
+        //   Long pa = Long.valueOf(purchaseAmount);
+
+        //   myApplicationClass.getLogger().logPurchase(BigDecimal.valueOf(pa), Currency.getInstance("UGX"), parameters);
 
     }
 

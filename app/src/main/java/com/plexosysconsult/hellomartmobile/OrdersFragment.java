@@ -48,7 +48,7 @@ import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
  */
 public class OrdersFragment extends Fragment {
 
-    private static final String URL_GET_ORDERS = "http://www.hellomart.ug/example/getCustomerOrdersByEmail.php";
+    private static final String URL_GET_ORDERS = "getCustomerOrdersByEmail.php";
 //app files are stored on gari share server for security purposes
 
 
@@ -153,7 +153,7 @@ public class OrdersFragment extends Fragment {
 
         pbLoading.setVisibility(View.VISIBLE);
 
-        StringRequest ordersRequest = new StringRequest(Request.Method.POST, URL_GET_ORDERS,
+        StringRequest ordersRequest = new StringRequest(Request.Method.POST,MyApplicationClass.generalUrl + URL_GET_ORDERS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Hello Mart Ug</string>
+    <string name="facebook_app_id">519640568528271</string>
+    <string name="fb_login_protocol_scheme">fb519640568528271</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -18,7 +20,7 @@
     <string name="about">About</string>
     <string name="settings">Settings</string>
     <string name="about_dev">PlexoSys Consult Ltd is a top business technology solutions company in Uganda. We build apps, systems, and digital experiences to Help you Make More Money, Save Time and Simplify your business!</string>
-    <string name="about_hellomart">Hello Mart is a leading online supermarket in Uganda. Shop your weekly groceries and home supplies easily and conveniently at everyday low prices and have them delivered to your doorstep!</string>
+    <string name="about_hellomart">HelloMart is a leading online supermarket in Uganda. Shop your weekly groceries and home supplies easily and conveniently at everyday low prices and have them delivered to your doorstep!</string>
     <string name="pesapal_description">Supports credit/debit card, MTN Mobile Money and Airtel Money Payment.</string>
     <string name="pesapal_payment">PesaPal Payment</string>
     <string name="cash_on_delivery">Cash on Delivery</string>

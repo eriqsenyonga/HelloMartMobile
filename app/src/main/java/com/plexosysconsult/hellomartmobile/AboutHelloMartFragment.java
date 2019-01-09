@@ -72,7 +72,7 @@ public class AboutHelloMartFragment extends Fragment {
                 //      .addItem(adsElement)
                 .addGroup("Connect with us")
                 .addEmail("groceries@hellomart.ug")
-                .addWebsite("http://hellomart.ug")
+                .addWebsite("https://hellomart.ug")
                 .addItem(callElement)
                 .addFacebook("hellomartug")
                 //        .addTwitter("medyo80")

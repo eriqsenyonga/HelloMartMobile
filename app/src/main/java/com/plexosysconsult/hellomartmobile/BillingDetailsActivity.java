@@ -40,7 +40,7 @@ public class BillingDetailsActivity extends AppCompatActivity implements View.On
     CheckBox cbCreateAccount;
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
     Cart cart;
-    String URL_PLACE_ORDER = "http://www.hellomart.ug/example/placeOrder.php";
+    String URL_PLACE_ORDER = "placeOrder.php";
     ProgressDialog progressDialog;
 
     @Override
@@ -272,7 +272,7 @@ public class BillingDetailsActivity extends AppCompatActivity implements View.On
 
     private void placeOrderOnline(final JSONObject orderObject) {
 
-        StringRequest placeOrderOnlineRequest = new StringRequest(Request.Method.POST, URL_PLACE_ORDER,
+        StringRequest placeOrderOnlineRequest = new StringRequest(Request.Method.POST, MyApplicationClass.generalUrl + URL_PLACE_ORDER,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

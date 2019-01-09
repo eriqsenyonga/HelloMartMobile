@@ -45,8 +45,8 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
 
     RecyclerView recyclerView;
     View v;
-    String URL_GET_ITEMS = "http://www.hellomart.ug/example/getAllProducts.php";
-    String URL_GET_ITEMS_IN_CATEGORY = "http://www.hellomart.ug/example/getProductsInCategory.php";
+    String URL_GET_ITEMS = "getAllProducts.php";
+    String URL_GET_ITEMS_IN_CATEGORY = "getProductsInCategory.php";
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
     // List<Item> itemsToShow;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -186,7 +186,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
 
     private void fetchItemsJson() {
 
-        StringRequest itemRequest = new StringRequest(Request.Method.POST, URL_GET_ITEMS,
+        StringRequest itemRequest = new StringRequest(Request.Method.POST, MyApplicationClass.generalUrl +URL_GET_ITEMS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -274,7 +274,7 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
 
     private void fetchItemsInCategoryJson() {
 
-        StringRequest itemRequest = new StringRequest(Request.Method.POST, URL_GET_ITEMS_IN_CATEGORY,
+        StringRequest itemRequest = new StringRequest(Request.Method.POST, MyApplicationClass.generalUrl + URL_GET_ITEMS_IN_CATEGORY,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

@@ -41,7 +41,7 @@ import java.util.Map;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     RecyclerView recyclerView;
-    String URL_GET_CATEGORIES = "http://www.hellomart.ug/example/getCategories.php";
+    String URL_GET_CATEGORIES = "getCategories.php";
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
     List<Category> categoryList;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -124,7 +124,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         pbLoading.setVisibility(View.VISIBLE);
 
-        StringRequest categoryRequest = new StringRequest(Request.Method.POST, URL_GET_CATEGORIES,
+        StringRequest categoryRequest = new StringRequest(Request.Method.POST, MyApplicationClass.generalUrl+ URL_GET_CATEGORIES,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

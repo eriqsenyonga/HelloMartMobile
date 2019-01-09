@@ -6,6 +6,10 @@ import android.graphics.Typeface;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.facebook.FacebookSdk;
+
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.internal.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +23,7 @@ public class MyApplicationClass extends Application {
     private RequestQueue mRequestQueue;
     private static MyApplicationClass mInstance;
     public static final String TAG = MyApplicationClass.class.getName();
-    String generalUrl = "http://hellomart.ug/";
+    static String generalUrl = "https://hellomart.ug/example/";
     List<Category> categoryList;
     List<Category> subCategoryList;
     String lastSubCategory;
@@ -27,11 +31,14 @@ public class MyApplicationClass extends Application {
     BillingDetails billingDetails;
     Typeface productSansBold, productSansRegular;
     List<OrderLineItem> orderLineItems;
-
+    AppEventsLogger logger;
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        logger = AppEventsLogger.newLogger(this);
+
         mInstance = this;
 
         productSansBold = Typeface.createFromAsset(this.getAssets(), "fonts/ProductSansBold.ttf");
@@ -127,14 +134,18 @@ public class MyApplicationClass extends Application {
         return productSansRegular;
     }
 
-    public void setSelectedOrderLineItems(List<OrderLineItem> orderLineItems){
+    public void setSelectedOrderLineItems(List<OrderLineItem> orderLineItems) {
 
         this.orderLineItems = orderLineItems;
 
     }
 
-    public List<OrderLineItem> getSelectedOrderLineItems(){
+    public List<OrderLineItem> getSelectedOrderLineItems() {
         return orderLineItems;
+    }
+
+    public AppEventsLogger getLogger(){
+        return logger;
     }
 
 }

@@ -41,7 +41,7 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
 
     RecyclerView recyclerView;
 
-    String URL_GET_ITEMS = "http://www.hellomart.ug/example/search.php";
+    String URL_GET_ITEMS = "search.php";
 
     MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
     //  List<Item> itemsToShow;
@@ -191,7 +191,7 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
 
     private void fetchItemsJson() {
 
-        StringRequest itemRequest = new StringRequest(Request.Method.POST, URL_GET_ITEMS,
+        StringRequest itemRequest = new StringRequest(Request.Method.POST,MyApplicationClass.generalUrl + URL_GET_ITEMS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

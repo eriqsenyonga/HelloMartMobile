@@ -6,12 +6,14 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <include layout="@layout/loading_spinner" />
+
 
     <im.delight.android.webview.AdvancedWebView
         android:id="@+id/awebview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <include layout="@layout/loading_spinner" />
+
 
 </FrameLayout>

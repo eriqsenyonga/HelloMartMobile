@@ -1,6 +1,8 @@
 package com.plexosysconsult.hellomartmobile;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -119,13 +121,33 @@ public class CartFragment extends Fragment implements View.OnClickListener {
 
             //   Toast.makeText(getActivity(),"Go to checkout", Toast.LENGTH_LONG).show();
 
+            if (cart.getCartGrandTotalLong() < 35000) {
+                //if the cart total is less than 35000 riyaleh, then chill
 
-            Intent i = new Intent(getActivity(), CheckoutActivity.class);
-            startActivity(i);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("Our minimum order value is UGX 35,000");
+                builder.setNeutralButton("Continue Shopping", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        mainActivity.showShopFragment();
+
+                    }
+                });
+
+                builder.create().show();
+
+
+            } else {
+
+
+                Intent i = new Intent(getActivity(), CheckoutActivity.class);
+                startActivity(i);
+            }
 
         }
 
-        if(v == bShopNow){
+        if (v == bShopNow) {
 
 
             mainActivity.showShopFragment();
