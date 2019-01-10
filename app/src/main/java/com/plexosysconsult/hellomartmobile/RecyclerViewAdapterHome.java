@@ -3,6 +3,7 @@ package com.plexosysconsult.hellomartmobile;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +24,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
+import com.facebook.appevents.AppEventsConstants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,6 +117,8 @@ public class RecyclerViewAdapterHome extends RecyclerView.Adapter<RecyclerView.V
                 public void onClick(View view, int position, boolean isLongClick) {
 
                     int categoryId = category.getId();
+
+                    logViewedContentEvent(category.getName());
 
                     List<Category> subCategoriesList = new ArrayList<>();
 
@@ -281,5 +285,12 @@ public class RecyclerViewAdapterHome extends RecyclerView.Adapter<RecyclerView.V
         public void onClick(View v) {
             this.itemClickListener.onClick(v, getAdapterPosition(), false);
         }
+    }
+
+    public void logViewedContentEvent (String category) {
+        Bundle params = new Bundle();
+        params.putString(AppEventsConstants.EVENT_PARAM_CONTENT_TYPE, "Category");
+        params.putString(AppEventsConstants.EVENT_PARAM_DESCRIPTION, category);
+        myApplicationClass.getLogger().logEvent(AppEventsConstants.EVENT_NAME_VIEWED_CONTENT,  params);
     }
 }

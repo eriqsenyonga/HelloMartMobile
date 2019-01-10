@@ -7,6 +7,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
@@ -31,7 +32,9 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
+import com.facebook.appevents.AppEventsConstants;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +45,6 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
 
     private static final int ITEM = 0;
     private static final int LOADING = 1;
-
 
     public static int KEY_MAIN_ACTIVITY = 1;
     public static int KEY_SEARCHABLE_ACTIVITY = 2;
@@ -347,6 +349,7 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
                                                                 }
 
                                                                 cart.addItemToCart(cartItem);
+                                                                logAddedToCartEvent(cartItem.getItemName(), cartItem.getItemTotalForCalculation());
 
                                                                 myApplicationClass.updateCart(cart);
 
@@ -481,5 +484,13 @@ public class RecyclerViewAdapterVegetable extends RecyclerView.Adapter<RecyclerV
         public LoadingVH(View itemView) {
             super(itemView);
         }
+    }
+
+    public void logAddedToCartEvent (String productName,   long price) {
+        Bundle params = new Bundle();
+        params.putString(AppEventsConstants.EVENT_PARAM_CONTENT_TYPE, "Added To Cart");
+        params.putString(AppEventsConstants.EVENT_PARAM_DESCRIPTION, productName);
+        params.putString(AppEventsConstants.EVENT_PARAM_CURRENCY, "UGX");
+        myApplicationClass.getLogger().logEvent(AppEventsConstants.EVENT_NAME_ADDED_TO_CART, price, params);
     }
 }

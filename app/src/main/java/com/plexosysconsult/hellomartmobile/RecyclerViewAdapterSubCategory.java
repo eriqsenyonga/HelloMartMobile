@@ -1,11 +1,14 @@
 package com.plexosysconsult.hellomartmobile;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.facebook.appevents.AppEventsConstants;
 
 import java.util.List;
 
@@ -18,6 +21,7 @@ public class RecyclerViewAdapterSubCategory extends RecyclerView.Adapter<Recycle
 
     Context context;
     List<Category> subCategories;
+    MyApplicationClass myApplicationClass = MyApplicationClass.getInstance();
 
     MainActivity mainActivity;
 
@@ -53,10 +57,12 @@ public class RecyclerViewAdapterSubCategory extends RecyclerView.Adapter<Recycle
         holder.tvCount.setText("(" + category.getCount() + ")");
 
 
+
+
         holder.setClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
-
+                logViewedContentEvent(category.getName());
                 mainActivity.showProductsInCategory(category.getSlug(), category.getName());
 
 
@@ -100,5 +106,12 @@ public class RecyclerViewAdapterSubCategory extends RecyclerView.Adapter<Recycle
         public void onClick(View v) {
             this.itemClickListener.onClick(v, getAdapterPosition(), false);
         }
+    }
+
+    public void logViewedContentEvent (String category) {
+        Bundle params = new Bundle();
+        params.putString(AppEventsConstants.EVENT_PARAM_CONTENT_TYPE, "SubCategory");
+        params.putString(AppEventsConstants.EVENT_PARAM_DESCRIPTION, category);
+        myApplicationClass.getLogger().logEvent(AppEventsConstants.EVENT_NAME_VIEWED_CONTENT,  params);
     }
 }

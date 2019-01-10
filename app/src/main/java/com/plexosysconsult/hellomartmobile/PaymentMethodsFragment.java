@@ -308,6 +308,7 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
                             //Log.d("COD ORDER", response);
 
                             JSONObject jsonResponse = new JSONObject(response);
+                            logPurchasedEvent(myApplicationClass.getCart().getCurrentCartItems().size(), myApplicationClass.getCart().getCartGrandTotalLong());
 
                             Intent i = new Intent(getActivity(), OrderSuccessActivity.class);
                             progressDialog.cancel();
@@ -426,7 +427,7 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
 
 
                             //  logPurchase(jsonResponse.getJSONObject("order").getString("total"));
-
+                            logPurchasedEvent(myApplicationClass.getCart().getCurrentCartItems().size(), myApplicationClass.getCart().getCartGrandTotalLong());
                             checkoutActivity.showPesapalIframe(orderId);
 
 
@@ -530,13 +531,11 @@ public class PaymentMethodsFragment extends Fragment implements View.OnClickList
 
     }
 
-    public void logPurchase(String purchaseAmount) {
-
-
-        //   Long pa = Long.valueOf(purchaseAmount);
-
-        //   myApplicationClass.getLogger().logPurchase(BigDecimal.valueOf(pa), Currency.getInstance("UGX"), parameters);
-
+    public void logPurchasedEvent (int numItems , long price) {
+        Bundle params = new Bundle();
+        params.putInt(AppEventsConstants.EVENT_PARAM_NUM_ITEMS, numItems);
+        params.putString(AppEventsConstants.EVENT_PARAM_CURRENCY, "UGX");
+        myApplicationClass.getLogger().logPurchase(BigDecimal.valueOf(price), Currency.getInstance("UGX"),params);
     }
 
 

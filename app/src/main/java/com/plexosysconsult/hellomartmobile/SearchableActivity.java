@@ -25,6 +25,7 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.facebook.appevents.AppEventsConstants;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -351,8 +352,11 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
 
         if(adapter.getItemCount() > 0){
             emptyLayout.setVisibility(View.GONE);
+            logSearchedEvent(queryString, true);
         }else{
             emptyLayout.setVisibility(View.VISIBLE);
+            logSearchedEvent(queryString, false);
+
         }
 
         if (currentPage < TOTAL_PAGES) adapter.addLoadingFooter();
@@ -381,6 +385,14 @@ public class SearchableActivity extends AppCompatActivity implements View.OnClic
             pbLoading.setVisibility(View.VISIBLE);
             fetchItemsJson();
         }
+    }
+
+    public void logSearchedEvent (String searchString, boolean success) {
+        Bundle params = new Bundle();
+
+        params.putString(AppEventsConstants.EVENT_PARAM_SEARCH_STRING, searchString);
+        params.putInt(AppEventsConstants.EVENT_PARAM_SUCCESS, success ? 1 : 0);
+        myApplicationClass.getLogger().logEvent(AppEventsConstants.EVENT_NAME_SEARCHED, params);
     }
 
 

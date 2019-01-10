@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity
         } else {
 
             tvClientName.setText("Welcome Guest");
-            tvClientEmail.setText("iShop@hellomart.ug");
+            tvClientEmail.setText("groceries@hellomart.ug");
 
         }
 

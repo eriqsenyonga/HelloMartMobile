@@ -18,6 +18,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.appevents.AppEventsConstants;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -140,7 +142,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
 
             } else {
 
-
+                logInitiatedCheckoutEvent(cart.getCurrentCartItems().size(), cart.getCartGrandTotalLong());
                 Intent i = new Intent(getActivity(), CheckoutActivity.class);
                 startActivity(i);
             }
@@ -156,5 +158,12 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    public void logInitiatedCheckoutEvent(int numItems, long totalPrice) {
+        Bundle params = new Bundle();
+
+        params.putInt(AppEventsConstants.EVENT_PARAM_NUM_ITEMS, numItems);
+        params.putString(AppEventsConstants.EVENT_PARAM_CURRENCY, "UGX");
+        myApplicationClass.getLogger().logEvent(AppEventsConstants.EVENT_NAME_INITIATED_CHECKOUT, totalPrice, params);
+    }
 
 }
